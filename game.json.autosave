@@ -487,10 +487,6 @@
           "value": "0"
         },
         {
-          "name": "score_increment",
-          "value": "2"
-        },
-        {
           "name": "enriched_transactions",
           "value": "0"
         }
@@ -1002,7 +998,9 @@
           "behaviors": [
             {
               "name": "pivot_point",
-              "type": "game::pivot_point"
+              "type": "game::pivot_point",
+              "transaction_speedup_level_increment": 2,
+              "transaction_speedup_increment_at": 2
             }
           ],
           "animations": [
@@ -2046,7 +2044,7 @@
                           "parameters": [
                             "data_quality_current",
                             "-",
-                            "10"
+                            "Object.Behavior::Propertydata_quality_loss()"
                           ],
                           "subInstructions": []
                         }
@@ -2151,7 +2149,7 @@
                           "parameters": [
                             "data_quality_current",
                             "+",
-                            "2"
+                            "Object.Behavior::Propertydata_quality_regain()"
                           ],
                           "subInstructions": []
                         },
@@ -2175,7 +2173,7 @@
                           "parameters": [
                             "score",
                             "+",
-                            "ceil(Variable(score_increment) * Variable(transactions_per_second))"
+                            "ceil(Object.Behavior::Propertyscore_increment() * Variable(transactions_per_second))"
                           ],
                           "subInstructions": []
                         },
@@ -2492,6 +2490,33 @@
               "extraInformation": [],
               "hidden": false,
               "name": "enriched_correctly"
+            },
+            {
+              "value": "2",
+              "type": "Number",
+              "label": "What's the base value for the score to go up by?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "score_increment"
+            },
+            {
+              "value": "2",
+              "type": "Number",
+              "label": "How much data quality should be regained from a successful enrichment?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "data_quality_regain"
+            },
+            {
+              "value": "10",
+              "type": "Number",
+              "label": "How much data quality should be lost from a failed enrichment?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "data_quality_loss"
             }
           ]
         },
@@ -2963,7 +2988,7 @@
                       "parameters": [
                         "Object",
                         "=",
-                        "\"Score: \n\" +  ToString(score)"
+                        "\"Score: \n\" +  VariableString(score)"
                       ],
                       "subInstructions": []
                     }
