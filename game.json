@@ -451,7 +451,7 @@
       "variables": [
         {
           "name": "transactions_per_second",
-          "value": "3"
+          "value": "5"
         },
         {
           "name": "transactions_visible",
@@ -464,6 +464,14 @@
         {
           "name": "data_quality_current",
           "value": "100"
+        },
+        {
+          "name": "transaction_speedup_timer",
+          "value": "5"
+        },
+        {
+          "name": "transaction_speedup_amount",
+          "value": "2"
         }
       ],
       "instances": [
@@ -633,6 +641,21 @@
           "x": 212,
           "y": 183,
           "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "transactions_per_second",
+          "width": 0,
+          "x": 463,
+          "y": 22,
+          "zOrder": 7,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1189,6 +1212,30 @@
               ]
             }
           ]
+        },
+        {
+          "bold": false,
+          "italic": false,
+          "name": "transactions_per_second",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "transactions_per_second",
+              "type": "game::transactions_per_second"
+            }
+          ],
+          "string": "Transactions per second: 3",
+          "font": "east-octopus/East Octopus - Personal Use.otf",
+          "characterSize": 40,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
         }
       ],
       "events": [],
@@ -1237,6 +1284,10 @@
         {
           "name": "transaction",
           "type": "game::transaction"
+        },
+        {
+          "name": "transactions_per_second",
+          "type": "game::transactions_per_second"
         }
       ]
     }
@@ -1271,6 +1322,38 @@
                   "disabled": false,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "DepartScene"
+                      },
+                      "parameters": [
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "transactions_per_second",
+                        "=",
+                        "Variable(transactions_per_second) / 10"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
                   "actions": [
                     {
@@ -1280,8 +1363,77 @@
                       },
                       "parameters": [
                         "Object",
-                        "180 / Variable(transactions_visible) * Variable(transactions_per_second) * -1",
+                        "360 / Variable(transactions_visible) * Variable(transactions_per_second) * -1",
                         ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ObjectTimer"
+                      },
+                      "parameters": [
+                        "Object",
+                        "\"transaction_speedup_timer\"",
+                        "Variable(transaction_speedup_timer)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ResetObjectTimer"
+                      },
+                      "parameters": [
+                        "Object",
+                        "\"transaction_speedup_timer\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "transactions_per_second",
+                        "=",
+                        "Variable(transactions_per_second) * 10"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "transactions_per_second",
+                        "+",
+                        "Variable(transaction_speedup_amount)"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "transactions_per_second",
+                        "=",
+                        "Variable(transactions_per_second) / 10"
                       ],
                       "subInstructions": []
                     }
@@ -2322,6 +2474,99 @@
                   "name": "Behavior",
                   "optional": false,
                   "supplementaryInformation": "game::game_over_emoji",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": []
+        },
+        {
+          "description": "Displays how fast the transactions appear",
+          "fullName": "Transactions Per Second",
+          "name": "transactions_per_second",
+          "objectType": "TextObject::Text",
+          "eventsFunctions": [
+            {
+              "description": "",
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPostEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "\"Transactions per second: \n\" + VariableString(transactions_per_second)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "DepartScene"
+                      },
+                      "parameters": [
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::SetTextAlignment"
+                      },
+                      "parameters": [
+                        "Object",
+                        "\"center\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "TextObject::Text",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::transactions_per_second",
                   "type": "behavior"
                 }
               ],
