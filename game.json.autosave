@@ -343,6 +343,76 @@
         "name": "default-1-8.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "east-octopus/East Octopus - Personal Use.otf",
+        "kind": "font",
+        "metadata": "",
+        "name": "east-octopus/East Octopus - Personal Use.otf",
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "smiley.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "smiley.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "smiley-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "smiley-2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "smiley-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "smiley-3.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "smiley-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "smiley-4.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "smiley-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "smiley-5.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "smiley-6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "smiley-6.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "smiley-7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "smiley-7.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -533,6 +603,36 @@
           "x": 377,
           "y": 41,
           "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "game_over",
+          "locked": false,
+          "name": "game_over_text",
+          "width": 0,
+          "x": -25,
+          "y": 41,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 346,
+          "layer": "game_over",
+          "locked": false,
+          "name": "game_over_emoji",
+          "width": 346,
+          "x": 212,
+          "y": 183,
+          "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -924,6 +1024,171 @@
               ]
             }
           ]
+        },
+        {
+          "bold": false,
+          "italic": false,
+          "name": "game_over_text",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [],
+          "string": "Game Over!",
+          "font": "east-octopus/East Octopus - Personal Use.otf",
+          "characterSize": 200,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        {
+          "name": "game_over_emoji",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "game_over_emoji",
+              "type": "game::game_over_emoji"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 20000,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "smiley-2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "smiley-3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "smiley-4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "smiley-5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "smiley-6.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "smiley-7.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "smiley.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [],
@@ -944,6 +1209,12 @@
             }
           ],
           "effects": []
+        },
+        {
+          "name": "game_over",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
         }
       ],
       "behaviorsSharedData": [
@@ -954,6 +1225,10 @@
         {
           "name": "data_quality_green",
           "type": "game::data_quality_green"
+        },
+        {
+          "name": "game_over_emoji",
+          "type": "game::game_over_emoji"
         },
         {
           "name": "pivot_point",
@@ -1799,11 +2074,20 @@
                       "colorR": 74,
                       "creationTime": 0,
                       "disabled": false,
-                      "folded": false,
+                      "folded": true,
                       "name": "Check if the transaction over the target area is the same shape as the button",
                       "source": "",
                       "type": "BuiltinCommonInstructions::Group",
-                      "events": [],
+                      "events": [
+                        {
+                          "disabled": false,
+                          "folded": false,
+                          "type": "BuiltinCommonInstructions::JsCode",
+                          "inlineCode": "// find attached transactions over the target area\nconst transactions = runtimeScene.getObjects(\"transaction\")\nconst targets = transactions.filter(transaction => {\n    const rotation = transaction.getVariables().get(\"current_rotation\").getAsNumber()\n    const rotated_far_enough = rotation < -255\n\n    const attached = transaction.getVariables().get(\"attached\").getAsString() == \"true\"\n    \n    return rotated_far_enough && attached\n})\n\nif (targets.length === 0) {\n    return\n}\n\n// get the shape\nconst target = targets[0]\nconst target_frame = target.getAnimationFrame()\nconst button_frame = objects[0].getAnimationFrame()\n\n// fail the transaction if the wrong button is pressed\nif (target_frame === button_frame) {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_correctly\"] = true\n} else {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_incorrectly\"] = true\n}",
+                          "parameterObjects": "Object",
+                          "useStrict": true
+                        }
+                      ],
                       "parameters": []
                     }
                   ]
@@ -1811,10 +2095,45 @@
                 {
                   "disabled": false,
                   "folded": false,
-                  "type": "BuiltinCommonInstructions::JsCode",
-                  "inlineCode": "// find attached transactions over the target area\nconst transactions = runtimeScene.getObjects(\"transaction\")\nconst targets = transactions.filter(transaction => {\n    const rotation = transaction.getVariables().get(\"current_rotation\").getAsNumber()\n    const rotated_far_enough = rotation < -255\n\n    const attached = transaction.getVariables().get(\"attached\").getAsString() == \"true\"\n    \n    return rotated_far_enough && attached\n})\n\nif (targets.length === 0) {\n    return\n}\n\ntargets[0].setColor(\"0;0;0\")\n\n// get the shape\nconst target = targets[0]\nconst target_frame = target.getAnimationFrame()\nconst button_frame = objects[0].getAnimationFrame()\n\n// fail the transaction if the wrong button is pressed\nif (target_frame === button_frame) {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_correctly\"] = true\n} else {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_incorrectly\"] = true\n}",
-                  "parameterObjects": "Object",
-                  "useStrict": true
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "data_quality_current",
+                        "<=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Object"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ShowLayer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"game_over\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
                 }
               ],
               "parameters": [
@@ -1930,6 +2249,79 @@
                   "name": "Behavior",
                   "optional": false,
                   "supplementaryInformation": "game::data_quality_green",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": []
+        },
+        {
+          "description": "The emoji that shows on the game over screen",
+          "fullName": "Game Over Emoji",
+          "name": "game_over_emoji",
+          "objectType": "Sprite",
+          "eventsFunctions": [
+            {
+              "description": "",
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPostEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "DepartScene"
+                      },
+                      "parameters": [
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeSprite"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "RandomInRange(0, 6)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::game_over_emoji",
                   "type": "behavior"
                 }
               ],
