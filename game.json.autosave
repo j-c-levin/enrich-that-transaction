@@ -413,6 +413,15 @@
         "name": "smiley-7.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "hitbox-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "hitbox-1.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -466,12 +475,28 @@
           "value": "100"
         },
         {
-          "name": "transaction_speedup_timer",
-          "value": "5"
+          "name": "transaction_speedup_level",
+          "value": "3"
         },
         {
           "name": "transaction_speedup_amount",
           "value": "2"
+        },
+        {
+          "name": "score",
+          "value": "0"
+        },
+        {
+          "name": "score_increment",
+          "value": "2"
+        },
+        {
+          "name": "enriched_transactions",
+          "value": "0"
+        },
+        {
+          "name": "transaction_speedup_level_increment",
+          "value": "3"
         }
       ],
       "instances": [
@@ -624,7 +649,7 @@
           "name": "game_over_text",
           "width": 0,
           "x": -25,
-          "y": 41,
+          "y": 98,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -639,8 +664,8 @@
           "name": "game_over_emoji",
           "width": 346,
           "x": 212,
-          "y": 183,
-          "zOrder": 6,
+          "y": 188,
+          "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -650,7 +675,7 @@
           "customSize": false,
           "height": 0,
           "layer": "",
-          "locked": false,
+          "locked": true,
           "name": "transactions_per_second",
           "width": 0,
           "x": 463,
@@ -659,6 +684,101 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": true,
+          "name": "score",
+          "width": 0,
+          "x": 154,
+          "y": 22,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 119,
+          "layer": "",
+          "locked": false,
+          "name": "button_hitbox",
+          "width": 119,
+          "x": 14,
+          "y": 462,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 119,
+          "layer": "",
+          "locked": false,
+          "name": "button_hitbox",
+          "width": 119,
+          "x": 170,
+          "y": 460,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 119,
+          "layer": "",
+          "locked": false,
+          "name": "button_hitbox",
+          "width": 119,
+          "x": 523,
+          "y": 463,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 119,
+          "layer": "",
+          "locked": false,
+          "name": "button_hitbox",
+          "width": 119,
+          "x": 675,
+          "y": 461,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "3"
+            }
+          ]
         }
       ],
       "objects": [
@@ -791,7 +911,7 @@
               "name": "transaction",
               "type": "game::transaction",
               "distance_from_pivot": 300,
-              "starting_location": 160
+              "starting_location": 170
             }
           ],
           "animations": [
@@ -1228,7 +1348,7 @@
               "type": "game::transactions_per_second"
             }
           ],
-          "string": "Transactions per second: 3",
+          "string": "Transactions per second: \n3",
           "font": "east-octopus/East Octopus - Personal Use.otf",
           "characterSize": 40,
           "color": {
@@ -1236,6 +1356,79 @@
             "g": 0,
             "r": 0
           }
+        },
+        {
+          "bold": false,
+          "italic": false,
+          "name": "score",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "score",
+              "type": "game::score"
+            }
+          ],
+          "string": "Score:\n20",
+          "font": "east-octopus/East Octopus - Personal Use.otf",
+          "characterSize": 40,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        {
+          "name": "button_hitbox",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "shape_id",
+              "value": ""
+            }
+          ],
+          "behaviors": [
+            {
+              "name": "button_hitbox",
+              "type": "game::button_hitbox"
+            }
+          ],
+          "animations": [
+            {
+              "name": "hitbox",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "hitbox-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [],
@@ -1270,6 +1463,10 @@
           "type": "game::button"
         },
         {
+          "name": "button_hitbox",
+          "type": "game::button_hitbox"
+        },
+        {
           "name": "data_quality_green",
           "type": "game::data_quality_green"
         },
@@ -1280,6 +1477,10 @@
         {
           "name": "pivot_point",
           "type": "game::pivot_point"
+        },
+        {
+          "name": "score",
+          "type": "game::score"
         },
         {
           "name": "transaction",
@@ -1311,6 +1512,57 @@
           "name": "pivot_point",
           "objectType": "Sprite",
           "eventsFunctions": [
+            {
+              "description": "",
+              "fullName": "",
+              "functionType": "Action",
+              "name": "onCreated",
+              "sentence": "",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Object"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::pivot_point",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
             {
               "description": "",
               "fullName": "",
@@ -1379,28 +1631,17 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "ObjectTimer"
+                        "value": "game::pivot_point::should_transactions_speedup"
                       },
                       "parameters": [
                         "Object",
-                        "\"transaction_speedup_timer\"",
-                        "Variable(transaction_speedup_timer)"
+                        "Behavior",
+                        ""
                       ],
                       "subInstructions": []
                     }
                   ],
                   "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "ResetObjectTimer"
-                      },
-                      "parameters": [
-                        "Object",
-                        "\"transaction_speedup_timer\""
-                      ],
-                      "subInstructions": []
-                    },
                     {
                       "type": {
                         "inverted": false,
@@ -1524,25 +1765,76 @@
               "objectGroups": []
             },
             {
-              "description": "",
-              "fullName": "",
-              "functionType": "Action",
-              "name": "onCreated",
-              "sentence": "",
+              "description": "Returns true if the player has enriched enough transactions",
+              "fullName": "Should the transactions speed up?",
+              "functionType": "Condition",
+              "name": "should_transactions_speedup",
+              "sentence": "_PARAM0_ should speed up transactions",
               "events": [
                 {
                   "disabled": false,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Egal"
+                      },
+                      "parameters": [
+                        "mod(Variable(enriched_transactions), Variable(transaction_speedup_level))",
+                        "=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "game::pivot_point::Propertylast_speed_incremented_count"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "!=",
+                        "Variable(enriched_transactions)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
                   "actions": [
                     {
                       "type": {
                         "inverted": false,
-                        "value": "Cache"
+                        "value": "game::pivot_point::SetPropertylast_speed_incremented_count"
                       },
                       "parameters": [
-                        "Object"
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "Variable(enriched_transactions)"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "transaction_speedup_level",
+                        "+",
+                        "Variable(transaction_speedup_level_increment)"
                       ],
                       "subInstructions": []
                     }
@@ -1584,6 +1876,15 @@
               "extraInformation": [],
               "hidden": true,
               "name": "last_spawn_angle"
+            },
+            {
+              "value": "0",
+              "type": "Number",
+              "label": "How many enriched transactions were there when we upped the speed?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "last_speed_incremented_count"
             }
           ]
         },
@@ -1836,6 +2137,42 @@
                             "data_quality_current",
                             "+",
                             "2"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "data_quality_current",
+                            "=",
+                            "min(Variable(data_quality_current), Variable(data_quality_max))"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "score",
+                            "+",
+                            "ceil(Variable(score_increment) * Variable(transactions_per_second))"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "enriched_transactions",
+                            "+",
+                            "1"
                           ],
                           "subInstructions": []
                         }
@@ -2196,62 +2533,6 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "SourisBouton"
-                      },
-                      "parameters": [
-                        "",
-                        "Left"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "SourisSurObjet"
-                      },
-                      "parameters": [
-                        "Object",
-                        "",
-                        "",
-                        ""
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [],
-                  "events": [
-                    {
-                      "colorB": 228,
-                      "colorG": 176,
-                      "colorR": 74,
-                      "creationTime": 0,
-                      "disabled": false,
-                      "folded": true,
-                      "name": "Check if the transaction over the target area is the same shape as the button",
-                      "source": "",
-                      "type": "BuiltinCommonInstructions::Group",
-                      "events": [
-                        {
-                          "disabled": false,
-                          "folded": false,
-                          "type": "BuiltinCommonInstructions::JsCode",
-                          "inlineCode": "// find attached transactions over the target area\nconst transactions = runtimeScene.getObjects(\"transaction\")\nconst targets = transactions.filter(transaction => {\n    const rotation = transaction.getVariables().get(\"current_rotation\").getAsNumber()\n    const rotated_far_enough = rotation < -255\n\n    const attached = transaction.getVariables().get(\"attached\").getAsString() == \"true\"\n    \n    return rotated_far_enough && attached\n})\n\nif (targets.length === 0) {\n    return\n}\n\n// get the shape\nconst target = targets[0]\nconst target_frame = target.getAnimationFrame()\nconst button_frame = objects[0].getAnimationFrame()\n\n// fail the transaction if the wrong button is pressed\nif (target_frame === button_frame) {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_correctly\"] = true\n} else {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_incorrectly\"] = true\n}",
-                          "parameterObjects": "Object",
-                          "useStrict": true
-                        }
-                      ],
-                      "parameters": []
-                    }
-                  ]
-                },
-                {
-                  "disabled": false,
-                  "folded": false,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": false,
                         "value": "VarScene"
                       },
                       "parameters": [
@@ -2270,17 +2551,6 @@
                       },
                       "parameters": [
                         "Object"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "ShowLayer"
-                      },
-                      "parameters": [
-                        "",
-                        "\"game_over\""
                       ],
                       "subInstructions": []
                     }
@@ -2453,6 +2723,39 @@
                     }
                   ],
                   "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "data_quality_current",
+                        "<=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ShowLayer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"game_over\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
                 }
               ],
               "parameters": [
@@ -2567,6 +2870,240 @@
                   "name": "Behavior",
                   "optional": false,
                   "supplementaryInformation": "game::transactions_per_second",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": []
+        },
+        {
+          "description": "The score text for the game",
+          "fullName": "Score",
+          "name": "score",
+          "objectType": "TextObject::Text",
+          "eventsFunctions": [
+            {
+              "description": "",
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPostEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "DepartScene"
+                      },
+                      "parameters": [
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::SetTextAlignment"
+                      },
+                      "parameters": [
+                        "Object",
+                        "\"center\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "score",
+                        "=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "\"Score: \n\" +  VariableString(score)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "TextObject::Text",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::score",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": []
+        },
+        {
+          "description": "Transparent hitbox that performs the enriching action on transactions",
+          "fullName": "Button Hitbox",
+          "name": "button_hitbox",
+          "objectType": "Sprite",
+          "eventsFunctions": [
+            {
+              "description": "",
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPostEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SourisBouton"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "Object",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "disabled": false,
+                      "folded": true,
+                      "name": "Check if the transaction over the target area is the same shape as the button",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "disabled": false,
+                          "folded": false,
+                          "type": "BuiltinCommonInstructions::JsCode",
+                          "inlineCode": "// find attached transactions over the target area\nconst transactions = runtimeScene.getObjects(\"transaction\")\nconst targets = transactions.filter(transaction => {\n    const rotation = transaction.getVariables().get(\"current_rotation\").getAsNumber()\n    const rotated_far_enough = rotation < -255\n\n    const attached = transaction.getVariables().get(\"attached\").getAsString() == \"true\"\n    \n    return rotated_far_enough && attached\n})\n\nif (targets.length === 0) {\n    return\n}\n\n// get the shape\nconst target = targets[0]\nconst target_frame = target.getAnimationFrame()\nconst button_frame = objects[0].getVariables().get(\"shape_id\").getAsNumber()\n\n// fail the transaction if the wrong button is pressed\nif (target_frame === button_frame) {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_correctly\"] = true\n} else {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_incorrectly\"] = true\n}",
+                          "parameterObjects": "Object",
+                          "useStrict": true
+                        }
+                      ],
+                      "parameters": []
+                    }
+                  ]
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "data_quality_current",
+                        "<=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Object"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::button_hitbox",
                   "type": "behavior"
                 }
               ],
