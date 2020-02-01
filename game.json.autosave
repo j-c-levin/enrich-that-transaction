@@ -422,6 +422,15 @@
         "name": "hitbox-1.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewFile-1.png",
+        "kind": "image",
+        "metadata": "{\"pskl\":{\"data\":\"{\\\"modelVersion\\\":2,\\\"piskel\\\":{\\\"name\\\":\\\"New Animation\\\",\\\"description\\\":\\\"\\\",\\\"fps\\\":12,\\\"height\\\":20,\\\"width\\\":32,\\\"layers\\\":[\\\"{\\\\\\\"name\\\\\\\":\\\\\\\"Layer 1\\\\\\\",\\\\\\\"opacity\\\\\\\":1,\\\\\\\"frameCount\\\\\\\":1,\\\\\\\"chunks\\\\\\\":[{\\\\\\\"layout\\\\\\\":[[0]],\\\\\\\"base64PNG\\\\\\\":\\\\\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAUCAYAAADskT9PAAAAKUlEQVRIS+3QQREAAAzCsOFfNJPBJ1XQS9r2hsUAAQIECBAgQIDAWuABZhFPxYQ7jkwAAAAASUVORK5CYII=\\\\\\\"}]}\\\",\\\"{\\\\\\\"name\\\\\\\":\\\\\\\"Layer 2\\\\\\\",\\\\\\\"opacity\\\\\\\":1,\\\\\\\"frameCount\\\\\\\":1,\\\\\\\"chunks\\\\\\\":[{\\\\\\\"layout\\\\\\\":[[0]],\\\\\\\"base64PNG\\\\\\\":\\\\\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAUCAYAAADskT9PAAAAm0lEQVRIS+3V3Q6AIAgFYHz/h67JRmPkzwHFbvKmtorzSToLEV304SgKUO9PDp64APT1BKKGc6YNlgeZCJ3xAtTgTISt3QRkIVoT6wJ2I3pdHQJ2IUa/dApYRczWEwSIImbhXNez/5GCsn3Rd10AtBNouLsDyOw84WFArxPe8CWARUTClwGCkEMtcn64F2EkZPTND3g6sLu1cL0bsoRBAeQKYkcAAAAASUVORK5CYII=\\\\\\\"}]}\\\"],\\\"hiddenFrames\\\":[\\\"\\\"]}}\",\"name\":\"NewFile\",\"paths\":[\"/Users/joshualevin/Documents/GDevelop Projects/enrich_that_transaction/NewFile-1.png\"],\"singleFrame\":true}}",
+        "name": "NewFile-1.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -454,7 +463,7 @@
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 1
+        "zoomFactor": 1.032
       },
       "objectsGroups": [],
       "variables": [
@@ -599,7 +608,7 @@
           "customSize": true,
           "height": 186,
           "layer": "",
-          "locked": false,
+          "locked": true,
           "name": "data_quality_green",
           "width": 50,
           "x": 402,
@@ -641,21 +650,6 @@
         },
         {
           "angle": 0,
-          "customSize": true,
-          "height": 346,
-          "layer": "game_over",
-          "locked": false,
-          "name": "game_over_emoji",
-          "width": 346,
-          "x": 212,
-          "y": 188,
-          "zOrder": 1,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
           "customSize": false,
           "height": 0,
           "layer": "",
@@ -689,7 +683,7 @@
           "customSize": true,
           "height": 119,
           "layer": "",
-          "locked": false,
+          "locked": true,
           "name": "button_hitbox",
           "width": 119,
           "x": 14,
@@ -709,11 +703,11 @@
           "customSize": true,
           "height": 119,
           "layer": "",
-          "locked": false,
+          "locked": true,
           "name": "button_hitbox",
           "width": 119,
-          "x": 170,
-          "y": 460,
+          "x": 169,
+          "y": 462,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -729,7 +723,7 @@
           "customSize": true,
           "height": 119,
           "layer": "",
-          "locked": false,
+          "locked": true,
           "name": "button_hitbox",
           "width": 119,
           "x": 523,
@@ -749,11 +743,11 @@
           "customSize": true,
           "height": 119,
           "layer": "",
-          "locked": false,
+          "locked": true,
           "name": "button_hitbox",
           "width": 119,
-          "x": 675,
-          "y": 461,
+          "x": 679,
+          "y": 460,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -763,6 +757,116 @@
               "value": "3"
             }
           ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 80,
+          "layer": "",
+          "locked": true,
+          "name": "button",
+          "width": 80,
+          "x": 191,
+          "y": 482,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 80,
+          "layer": "",
+          "locked": true,
+          "name": "button",
+          "width": 80,
+          "x": 191,
+          "y": 482,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 119,
+          "layer": "",
+          "locked": true,
+          "name": "button_hitbox",
+          "width": 119,
+          "x": 169,
+          "y": 462,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 80,
+          "layer": "",
+          "locked": true,
+          "name": "button",
+          "width": 80,
+          "x": 191,
+          "y": 482,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 300,
+          "layer": "game_over",
+          "locked": true,
+          "name": "game_over_emoji",
+          "width": 300,
+          "x": 237,
+          "y": 207,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "game_over",
+          "locked": false,
+          "name": "game_over_text",
+          "width": 0,
+          "x": -25,
+          "y": 98,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -1192,7 +1296,7 @@
               "directions": [
                 {
                   "looping": false,
-                  "timeBetweenFrames": 20000,
+                  "timeBetweenFrames": 2000,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
@@ -1415,9 +1519,142 @@
               ]
             }
           ]
+        },
+        {
+          "additive": false,
+          "alphaParam": "Mutable",
+          "angleParam": "Mutable",
+          "blueParam": "Random",
+          "destroyWhenNoParticles": true,
+          "emissionEditionSimpleMode": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 130,
+          "emitterForceMax": 180,
+          "emitterForceMin": 80,
+          "emitterXDirection": 0,
+          "emitterYDirection": 1,
+          "emitterZDirection": 0,
+          "flow": 80,
+          "friction": 2,
+          "gravityEditionSimpleMode": true,
+          "greenParam": "Random",
+          "maxParticleNb": 300,
+          "name": "enriched_trail",
+          "particleAlpha1": 204,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 255,
+          "particleBlue2": 255,
+          "particleEditionSimpleMode": true,
+          "particleGravityX": 0,
+          "particleGravityY": 0,
+          "particleGravityZ": 0,
+          "particleGreen1": 255,
+          "particleGreen2": 255,
+          "particleLifeTimeMax": 0.8,
+          "particleLifeTimeMin": 0.2,
+          "particleRed1": 255,
+          "particleRed2": 255,
+          "particleSize1": 100,
+          "particleSize2": 100,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "redParam": "Enabled",
+          "rendererParam1": 3,
+          "rendererParam2": 1,
+          "rendererType": "Quad",
+          "sizeParam": "Mutable",
+          "tags": "",
+          "tank": 100,
+          "textureParticleName": "NewFile-1.png",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 3,
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "enriched_trail",
+              "type": "game::enriched_trail"
+            }
+          ]
         }
       ],
-      "events": [],
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "disabled": false,
+          "folded": true,
+          "name": "Initialize linked object manager",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "DepartScene"
+                  },
+                  "parameters": [
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "data_quality_red",
+                    "-100",
+                    "-100",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "LinkedObjects::RemoveAllLinksOf"
+                  },
+                  "parameters": [
+                    "",
+                    "data_quality_red"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "data_quality_red",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ],
+          "parameters": []
+        }
+      ],
       "layers": [
         {
           "name": "",
@@ -1455,6 +1692,10 @@
         {
           "name": "data_quality_green",
           "type": "game::data_quality_green"
+        },
+        {
+          "name": "enriched_trail",
+          "type": "game::enriched_trail"
         },
         {
           "name": "game_over_emoji",
@@ -1912,12 +2153,111 @@
               "description": "",
               "fullName": "",
               "functionType": "Action",
+              "name": "onCreated",
+              "sentence": "",
+              "events": [
+                {
+                  "colorB": 228,
+                  "colorG": 176,
+                  "colorR": 74,
+                  "creationTime": 0,
+                  "disabled": false,
+                  "folded": true,
+                  "name": "Set original pivot angle",
+                  "source": "",
+                  "type": "BuiltinCommonInstructions::Group",
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::JsCode",
+                      "inlineCode": "const obj = objects[0]\nconst pivot = runtimeScene.getObjects(\"pivot_point\")[0]\nobj.getVariables().get(\"pivot_spawn_rotation\").setNumber(pivot.getAngle())",
+                      "parameterObjects": "Object",
+                      "useStrict": true
+                    }
+                  ],
+                  "parameters": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeSprite"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "RandomInRange(0, 3)"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeColor"
+                      },
+                      "parameters": [
+                        "Object",
+                        "\"255;255;255\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "game::transaction::SetPropertyshake_speed"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "RandomFloatInRange(5, 10)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::transaction",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "",
+              "fullName": "",
+              "functionType": "Action",
               "name": "doStepPostEvents",
               "sentence": "",
               "events": [
                 {
                   "disabled": false,
-                  "folded": false,
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -1957,12 +2297,46 @@
                         }
                       ],
                       "parameters": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "RotateTowardAngle"
+                          },
+                          "parameters": [
+                            "Object",
+                            "20 * sin(TimeFromStart() * Object.Behavior::Propertyshake_speed())",
+                            "0",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MettreX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "=",
+                            "Object.X() + 10 * sin(TimeFromStart() * Object.Behavior::Propertyshake_speed())"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
                     }
                   ]
                 },
                 {
                   "disabled": false,
-                  "folded": false,
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -2191,7 +2565,30 @@
                           "subInstructions": []
                         }
                       ],
-                      "events": []
+                      "events": [
+                        {
+                          "colorB": 228,
+                          "colorG": 176,
+                          "colorR": 74,
+                          "creationTime": 0,
+                          "disabled": false,
+                          "folded": false,
+                          "name": "Create and link an enriched trail particle emitter",
+                          "source": "",
+                          "type": "BuiltinCommonInstructions::Group",
+                          "events": [
+                            {
+                              "disabled": false,
+                              "folded": false,
+                              "type": "BuiltinCommonInstructions::JsCode",
+                              "inlineCode": "const emitter = runtimeScene.createObject(\"enriched_trail\")\nruntimeScene.linkedObjectsManager.linkObjects(objects[0], emitter)\nemitter.setX(-100)\nemitter.setY(-100)\nemitter.setAngle(180)",
+                              "parameterObjects": "Object",
+                              "useStrict": true
+                            }
+                          ],
+                          "parameters": []
+                        }
+                      ]
                     }
                   ]
                 }
@@ -2306,92 +2703,6 @@
               "objectGroups": []
             },
             {
-              "description": "",
-              "fullName": "",
-              "functionType": "Action",
-              "name": "onCreated",
-              "sentence": "",
-              "events": [
-                {
-                  "colorB": 228,
-                  "colorG": 176,
-                  "colorR": 74,
-                  "creationTime": 0,
-                  "disabled": false,
-                  "folded": true,
-                  "name": "Set original pivot angle",
-                  "source": "",
-                  "type": "BuiltinCommonInstructions::Group",
-                  "events": [
-                    {
-                      "disabled": false,
-                      "folded": false,
-                      "type": "BuiltinCommonInstructions::JsCode",
-                      "inlineCode": "const obj = objects[0]\nconst pivot = runtimeScene.getObjects(\"pivot_point\")[0]\nobj.getVariables().get(\"pivot_spawn_rotation\").setNumber(pivot.getAngle())",
-                      "parameterObjects": "Object",
-                      "useStrict": true
-                    }
-                  ],
-                  "parameters": []
-                },
-                {
-                  "disabled": false,
-                  "folded": false,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "ChangeSprite"
-                      },
-                      "parameters": [
-                        "Object",
-                        "=",
-                        "RandomInRange(0, 3)"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "ChangeColor"
-                      },
-                      "parameters": [
-                        "Object",
-                        "\"255;255;255\""
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "events": []
-                }
-              ],
-              "parameters": [
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "Object",
-                  "longDescription": "",
-                  "name": "Object",
-                  "optional": false,
-                  "supplementaryInformation": "Sprite",
-                  "type": "object"
-                },
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "Behavior",
-                  "longDescription": "",
-                  "name": "Behavior",
-                  "optional": false,
-                  "supplementaryInformation": "game::transaction",
-                  "type": "behavior"
-                }
-              ],
-              "objectGroups": []
-            },
-            {
               "description": "Returns true if the transaction has been successfully enriched",
               "fullName": "Should the transaction be enriched?",
               "functionType": "Condition",
@@ -2468,7 +2779,7 @@
             {
               "value": "110",
               "type": "Number",
-              "label": "Where should the object begin rotatng from?",
+              "label": "Where should the object begin rotating from?",
               "description": "",
               "extraInformation": [],
               "hidden": false,
@@ -2489,7 +2800,7 @@
               "label": "Has the transaction been enriched correctly?",
               "description": "",
               "extraInformation": [],
-              "hidden": false,
+              "hidden": true,
               "name": "enriched_correctly"
             },
             {
@@ -2518,6 +2829,15 @@
               "extraInformation": [],
               "hidden": false,
               "name": "data_quality_loss"
+            },
+            {
+              "value": "10",
+              "type": "Number",
+              "label": "How fast should the object shake?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "shake_speed"
             }
           ]
         },
@@ -3145,6 +3465,69 @@
                   "name": "Behavior",
                   "optional": false,
                   "supplementaryInformation": "game::button_hitbox",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": []
+        },
+        {
+          "description": "A particle emitter of for successfully enriched transactions",
+          "fullName": "Enriched Trail",
+          "name": "enriched_trail",
+          "objectType": "ParticleSystem::ParticleEmitter",
+          "eventsFunctions": [
+            {
+              "description": "",
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPostEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "colorB": 228,
+                  "colorG": 176,
+                  "colorR": 74,
+                  "creationTime": 0,
+                  "disabled": false,
+                  "folded": false,
+                  "name": "Position the emitter behind the linked transaction",
+                  "source": "",
+                  "type": "BuiltinCommonInstructions::Group",
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::JsCode",
+                      "inlineCode": "const obj = objects[0]\nlet transaction = runtimeScene.linkedObjectsManager.getObjectsLinkedWith(obj)\n\nif (transaction.length === 0) {\n    return\n}\n\ntransaction = transaction[0]\n\nconst xPos = transaction.getAABB().min[0]\nconst yPos = (transaction.getAABB().min[1] + transaction.getAABB().max[1]) / 2\n\nobj.setX(xPos)\nobj.setY(yPos)",
+                      "parameterObjects": "Object",
+                      "useStrict": true
+                    }
+                  ],
+                  "parameters": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "ParticleSystem::ParticleEmitter",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::enriched_trail",
                   "type": "behavior"
                 }
               ],
