@@ -103,15 +103,6 @@
     "resources": [
       {
         "alwaysLoaded": false,
-        "file": "NewObject-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "NewObject-1.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "NewObject-1-0.png",
         "kind": "image",
         "metadata": "",
@@ -136,6 +127,159 @@
         "name": "shapes-2.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewObject-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-1-0.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-2-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-2-0.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-1-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-2-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-2-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-3-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-3-0.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-4.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-1-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-1-2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-2-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-2-2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-3-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-3-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-4-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-4-0.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "default-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "default-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "default-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "default-1-0.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "default-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "default-1-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "default-1-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "default-1-2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "default-1-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "default-1-3.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -190,15 +334,210 @@
           "locked": false,
           "name": "pivot_point",
           "width": 0,
-          "x": 387,
-          "y": -33,
+          "x": 376,
+          "y": -32,
           "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 80,
+          "layer": "",
+          "locked": false,
+          "name": "button",
+          "width": 80,
+          "x": 35,
+          "y": 482,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 80,
+          "layer": "",
+          "locked": false,
+          "name": "button",
+          "width": 80,
+          "x": 191,
+          "y": 482,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 80,
+          "layer": "",
+          "locked": false,
+          "name": "button",
+          "width": 80,
+          "x": 542,
+          "y": 482,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 80,
+          "layer": "",
+          "locked": false,
+          "name": "button",
+          "width": 80,
+          "x": 698,
+          "y": 482,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "target_area",
+          "width": 0,
+          "x": 351,
+          "y": 246,
+          "zOrder": -1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
         }
       ],
       "objects": [
+        {
+          "name": "button",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "shape_id",
+              "value": ""
+            }
+          ],
+          "behaviors": [
+            {
+              "name": "button",
+              "type": "game::button"
+            }
+          ],
+          "animations": [
+            {
+              "name": "shapes",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 2000,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "shapes-1-2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "shapes-2-2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "shapes-3-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "shapes-4-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "name": "transaction",
           "tags": "",
@@ -238,11 +577,62 @@
               "directions": [
                 {
                   "looping": false,
-                  "timeBetweenFrames": 20,
+                  "timeBetweenFrames": 20000,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "NewObject-1.png",
+                      "image": "shapes-1-2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "shapes-2-2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "shapes-3-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "shapes-4-0.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -306,6 +696,45 @@
               ]
             }
           ]
+        },
+        {
+          "name": "target_area",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "default-1-3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [],
@@ -329,6 +758,10 @@
         }
       ],
       "behaviorsSharedData": [
+        {
+          "name": "button",
+          "type": "game::button"
+        },
         {
           "name": "pivot_point",
           "type": "game::pivot_point"
@@ -656,6 +1089,17 @@
                             "1"
                           ],
                           "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ChangeColor"
+                          },
+                          "parameters": [
+                            "Object",
+                            "\"88;92;92\""
+                          ],
+                          "subInstructions": []
                         }
                       ],
                       "events": []
@@ -730,7 +1174,7 @@
                         "Object",
                         "current_rotation",
                         "<",
-                        "-290"
+                        "-285\n"
                       ],
                       "subInstructions": []
                     }
@@ -782,12 +1226,58 @@
               "sentence": "",
               "events": [
                 {
+                  "colorB": 228,
+                  "colorG": 176,
+                  "colorR": 74,
+                  "creationTime": 0,
+                  "disabled": false,
+                  "folded": true,
+                  "name": "Set original pivot angle",
+                  "source": "",
+                  "type": "BuiltinCommonInstructions::Group",
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::JsCode",
+                      "inlineCode": "const obj = objects[0]\nconst pivot = runtimeScene.getObjects(\"pivot_point\")[0]\nobj.getVariables().get(\"pivot_spawn_rotation\").setNumber(pivot.getAngle())",
+                      "parameterObjects": "Object",
+                      "useStrict": true
+                    }
+                  ],
+                  "parameters": []
+                },
+                {
                   "disabled": false,
                   "folded": false,
-                  "type": "BuiltinCommonInstructions::JsCode",
-                  "inlineCode": "const obj = objects[0]\nconst pivot = runtimeScene.getObjects(\"pivot_point\")[0]\nobj.getVariables().get(\"pivot_spawn_rotation\").setNumber(pivot.getAngle())",
-                  "parameterObjects": "Object",
-                  "useStrict": true
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeSprite"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "RandomInRange(0, 3)"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeColor"
+                      },
+                      "parameters": [
+                        "Object",
+                        "\"255;255;255\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
                 }
               ],
               "parameters": [
@@ -835,6 +1325,79 @@
               "name": "starting_location"
             }
           ]
+        },
+        {
+          "description": "The pressable button to enrich transactions",
+          "fullName": "Transaction Button",
+          "name": "button",
+          "objectType": "Sprite",
+          "eventsFunctions": [
+            {
+              "description": "",
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPostEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "DepartScene"
+                      },
+                      "parameters": [
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeSprite"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "Object.Variable(shape_id)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::button",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": []
         }
       ]
     }
