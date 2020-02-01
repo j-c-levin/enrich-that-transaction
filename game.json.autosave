@@ -202,42 +202,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "shapes-1-2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "shapes-1-2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "shapes-2-2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "shapes-2-2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "shapes-3-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "shapes-3-1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "shapes-4-0.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "shapes-4-0.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
         "file": "default-1.png",
         "kind": "image",
         "metadata": "",
@@ -431,6 +395,150 @@
         "name": "NewFile-1.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-1-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-1-3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-2-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-2-3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-3-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-3-2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-4-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-4-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-1-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-1-2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-2-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-2-2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-3-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-3-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-4-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-4-0.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-1-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-1-4.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-2-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-2-4.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-3-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-3-3.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-4-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-4-2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-1-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-1-5.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-2-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-2-5.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-3-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-3-4.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "shapes-4-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "shapes-4-3.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -1077,7 +1185,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "shapes-1-2.png",
+                      "image": "shapes-1-5.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1094,7 +1202,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "shapes-2-2.png",
+                      "image": "shapes-2-5.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1111,7 +1219,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "shapes-3-1.png",
+                      "image": "shapes-3-4.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1128,7 +1236,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "shapes-4-0.png",
+                      "image": "shapes-4-3.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1209,7 +1317,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "shapes-2-2.png",
+                      "image": "shapes-2-5.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1226,7 +1334,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "shapes-3-1.png",
+                      "image": "shapes-3-3.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -2490,7 +2598,7 @@
                           },
                           "parameters": [
                             "Object",
-                            "20 * sin(TimeFromStart() * Object.Behavior::Propertyshake_speed())",
+                            "10 * sin(TimeFromStart() * Object.Behavior::Propertyshake_speed())",
                             "0",
                             ""
                           ],
@@ -2504,7 +2612,7 @@
                           "parameters": [
                             "Object",
                             "=",
-                            "Object.X() + 10 * sin(TimeFromStart() * Object.Behavior::Propertyshake_speed())"
+                            "Object.X() + 5 * sin(TimeFromStart() * Object.Behavior::Propertyshake_speed())"
                           ],
                           "subInstructions": []
                         }
