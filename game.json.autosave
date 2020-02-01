@@ -987,13 +987,14 @@
                   "conditions": [
                     {
                       "type": {
-                        "inverted": true,
-                        "value": "game::transaction::should_detatch"
+                        "inverted": false,
+                        "value": "VarObjetTxt"
                       },
                       "parameters": [
                         "Object",
-                        "Behavior",
-                        ""
+                        "attached",
+                        "=",
+                        "\"true\""
                       ],
                       "subInstructions": []
                     }
@@ -1032,7 +1033,7 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "game::transaction::should_detatch"
+                        "value": "game::transaction::should_fail"
                       },
                       "parameters": [
                         "Object",
@@ -1127,6 +1128,77 @@
                       "events": []
                     }
                   ]
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "game::transaction::should_enrich"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarObjetTxt"
+                          },
+                          "parameters": [
+                            "Object",
+                            "attached",
+                            "=",
+                            "\"true\""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarObjetTxt"
+                          },
+                          "parameters": [
+                            "Object",
+                            "attached",
+                            "=",
+                            "\"false\""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "AddForceAL"
+                          },
+                          "parameters": [
+                            "Object",
+                            "RandomFloatInRange(-10, 10)",
+                            "800",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
                 }
               ],
               "parameters": [
@@ -1154,11 +1226,11 @@
               "objectGroups": []
             },
             {
-              "description": "Returns true if the transaction is rotated too far",
-              "fullName": "Should the transaction detatch?",
+              "description": "Returns true if the transaction is rotated too far or selected incorrectly",
+              "fullName": "Should the transaction fail?",
               "functionType": "Condition",
-              "name": "should_detatch",
-              "sentence": "_PARAM0_ should detatch",
+              "name": "should_fail",
+              "sentence": "_PARAM0_ has failed enrichment",
               "events": [
                 {
                   "disabled": false,
@@ -1323,6 +1395,69 @@
                 }
               ],
               "objectGroups": []
+            },
+            {
+              "description": "Returns true if the transaction has been successfully enriched",
+              "fullName": "Should the transaction be enriched?",
+              "functionType": "Condition",
+              "name": "should_enrich",
+              "sentence": "_PARAM0_ has been enriched",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "game::transaction::Propertyenriched_correctly"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::transaction",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
             }
           ],
           "propertyDescriptors": [
@@ -1352,6 +1487,15 @@
               "extraInformation": [],
               "hidden": true,
               "name": "enriched_incorrectly"
+            },
+            {
+              "value": "",
+              "type": "Boolean",
+              "label": "Has the transaction been enriched correctly?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "enriched_correctly"
             }
           ]
         },
@@ -1433,12 +1577,26 @@
                   "actions": [],
                   "events": [
                     {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
                       "disabled": false,
-                      "folded": false,
-                      "type": "BuiltinCommonInstructions::JsCode",
-                      "inlineCode": "const transactions = runtimeScene.getObjects(\"transaction\")\nconst targets = transactions.filter(transaction => {\n    const rotated_far_enough = transaction.getVariables().get(\"current_rotation\").getAsNumber() < -250\n    const attached = transaction.getVariables().get(\"attached\").getAsString() == \"true\"\n    return rotated_far_enough && attached\n})\n\nif (targets.length === 0) {\n    return\n}\n\nconst target = targets[0]\nconst target_frame = target.getAnimationFrame()\nconst button_frame = objects[0].getAnimationFrame()\n\nif (target_frame !== button_frame) {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_incorrectly\"] = true\n}",
-                      "parameterObjects": "Object",
-                      "useStrict": true
+                      "folded": true,
+                      "name": "Check if the transaction over the target area is the same shape as the button",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "disabled": false,
+                          "folded": false,
+                          "type": "BuiltinCommonInstructions::JsCode",
+                          "inlineCode": "// find attached transactions over the target area\nconst transactions = runtimeScene.getObjects(\"transaction\")\nconst targets = transactions.filter(transaction => {\n    const rotation = transaction.getVariables().get(\"current_rotation\").getAsNumber()\n    const rotated_far_enough = rotation < -250\n\n    const attached = transaction.getVariables().get(\"attached\").getAsString() == \"true\"\n    \n    return rotated_far_enough && attached\n})\n\nif (targets.length === 0) {\n    return\n}\n\n// get the shape\nconst target = targets[0]\nconst target_frame = target.getAnimationFrame()\nconst button_frame = objects[0].getAnimationFrame()\n\n// fail the transaction if the wrong button is pressed\nif (target_frame === button_frame) {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_correctly\"] = true\n} else {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_incorrectly\"] = true\n}",
+                          "parameterObjects": "Object",
+                          "useStrict": true
+                        }
+                      ],
+                      "parameters": []
                     }
                   ]
                 }
