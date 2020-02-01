@@ -475,14 +475,6 @@
           "value": "100"
         },
         {
-          "name": "transaction_speedup_level",
-          "value": "3"
-        },
-        {
-          "name": "transaction_speedup_amount",
-          "value": "2"
-        },
-        {
           "name": "score",
           "value": "0"
         },
@@ -1656,7 +1648,7 @@
                       "parameters": [
                         "transactions_per_second",
                         "+",
-                        "Variable(transaction_speedup_amount)"
+                        "Object.Behavior::Propertytransaction_speedup_amount()"
                       ],
                       "subInstructions": []
                     },
@@ -1898,6 +1890,15 @@
               "extraInformation": [],
               "hidden": false,
               "name": "transaction_speedup_level_increment"
+            },
+            {
+              "value": "2",
+              "type": "Number",
+              "label": "How much faster should the transactions be?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "transaction_speedup_amount"
             }
           ]
         },
