@@ -1168,15 +1168,35 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "VarObjet"
+                        "value": "BuiltinCommonInstructions::Or"
                       },
-                      "parameters": [
-                        "Object",
-                        "current_rotation",
-                        "<",
-                        "-285\n"
-                      ],
-                      "subInstructions": []
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "Object",
+                            "current_rotation",
+                            "<",
+                            "-285\n"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "game::transaction::Propertyenriched_incorrectly"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Behavior"
+                          ],
+                          "subInstructions": []
+                        }
+                      ]
                     }
                   ],
                   "actions": [
@@ -1323,6 +1343,15 @@
               "extraInformation": [],
               "hidden": false,
               "name": "starting_location"
+            },
+            {
+              "value": "",
+              "type": "Boolean",
+              "label": "Has the transaction been enriched incorrectly?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "enriched_incorrectly"
             }
           ]
         },
@@ -1370,6 +1399,48 @@
                     }
                   ],
                   "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SourisBouton"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "Object",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::JsCode",
+                      "inlineCode": "const transactions = runtimeScene.getObjects(\"transaction\")\nconst targets = transactions.filter(transaction => {\n    const rotated_far_enough = transaction.getVariables().get(\"current_rotation\").getAsNumber() < -250\n    const attached = transaction.getVariables().get(\"attached\").getAsString() == \"true\"\n    return rotated_far_enough && attached\n})\n\nif (targets.length === 0) {\n    return\n}\n\nconst target = targets[0]\nconst target_frame = target.getAnimationFrame()\nconst button_frame = objects[0].getAnimationFrame()\n\nif (target_frame !== button_frame) {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_incorrectly\"] = true\n}",
+                      "parameterObjects": "Object",
+                      "useStrict": true
+                    }
+                  ]
                 }
               ],
               "parameters": [
