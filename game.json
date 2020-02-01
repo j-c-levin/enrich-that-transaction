@@ -493,10 +493,6 @@
         {
           "name": "enriched_transactions",
           "value": "0"
-        },
-        {
-          "name": "transaction_speedup_level_increment",
-          "value": "3"
         }
       ],
       "instances": [
@@ -1006,7 +1002,9 @@
           "behaviors": [
             {
               "name": "pivot_point",
-              "type": "game::pivot_point"
+              "type": "game::pivot_point",
+              "transaction_speedup_level_increment": 2,
+              "transaction_speedup_increment_at": 2
             }
           ],
           "animations": [
@@ -1782,7 +1780,7 @@
                         "value": "Egal"
                       },
                       "parameters": [
-                        "mod(Variable(enriched_transactions), Variable(transaction_speedup_level))",
+                        "mod(Variable(enriched_transactions) - Object.Behavior::Propertylast_speed_incremented_count(), Object.Behavior::Propertytransaction_speedup_increment_at())",
                         "=",
                         "0"
                       ],
@@ -1819,22 +1817,23 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "SetReturnBoolean"
+                        "value": "game::pivot_point::SetPropertytransaction_speedup_increment_at"
                       },
                       "parameters": [
-                        "True"
+                        "Object",
+                        "Behavior",
+                        "+",
+                        "Object.Behavior::Propertytransaction_speedup_level_increment()"
                       ],
                       "subInstructions": []
                     },
                     {
                       "type": {
                         "inverted": false,
-                        "value": "ModVarScene"
+                        "value": "SetReturnBoolean"
                       },
                       "parameters": [
-                        "transaction_speedup_level",
-                        "+",
-                        "Variable(transaction_speedup_level_increment)"
+                        "True"
                       ],
                       "subInstructions": []
                     }
@@ -1885,6 +1884,24 @@
               "extraInformation": [],
               "hidden": true,
               "name": "last_speed_incremented_count"
+            },
+            {
+              "value": "3",
+              "type": "Number",
+              "label": "After how many successful enriched transactions should the game speedup?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "transaction_speedup_increment_at"
+            },
+            {
+              "value": "3",
+              "type": "Number",
+              "label": "How how much further apart should the speedups get as the game goes on?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "transaction_speedup_level_increment"
             }
           ]
         },
@@ -2948,7 +2965,7 @@
                       "parameters": [
                         "Object",
                         "=",
-                        "\"Score: \n\" +  VariableString(score)"
+                        "\"Score: \n\" +  ToString(score)"
                       ],
                       "subInstructions": []
                     }
