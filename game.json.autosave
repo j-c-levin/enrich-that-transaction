@@ -539,6 +539,33 @@
         "name": "shapes-4-3.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "enrich.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "enrich.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "that.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "that.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "transaction.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "transaction.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -578,30 +605,15 @@
       "instances": [
         {
           "angle": 0,
-          "customSize": true,
-          "height": 103,
+          "customSize": false,
+          "height": 0,
           "layer": "",
           "locked": false,
           "name": "enrich",
-          "width": 556,
+          "width": 0,
           "x": 41,
-          "y": 79,
+          "y": 30,
           "zOrder": 1,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 103,
-          "layer": "",
-          "locked": false,
-          "name": "that",
-          "width": 365,
-          "x": 402,
-          "y": 205,
-          "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -612,10 +624,25 @@
           "height": 0,
           "layer": "",
           "locked": false,
-          "name": "transaction",
+          "name": "that",
           "width": 0,
-          "x": 62,
-          "y": 343,
+          "x": 322,
+          "y": 187,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 318,
+          "layer": "",
+          "locked": false,
+          "name": "transaction",
+          "width": 794,
+          "x": 1,
+          "y": 286,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -624,13 +651,10 @@
       ],
       "objects": [
         {
-          "bold": false,
-          "italic": false,
           "name": "enrich",
-          "smoothed": true,
           "tags": "",
-          "type": "TextObject::Text",
-          "underlined": false,
+          "type": "Sprite",
+          "updateIfNotVisible": false,
           "variables": [],
           "behaviors": [
             {
@@ -639,23 +663,43 @@
               "shake_speed": 10
             }
           ],
-          "string": "ENRICH",
-          "font": "east-octopus/East Octopus - Personal Use.otf",
-          "characterSize": 100,
-          "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
-          }
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "enrich.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
-          "bold": false,
-          "italic": false,
           "name": "that",
-          "smoothed": true,
           "tags": "",
-          "type": "TextObject::Text",
-          "underlined": false,
+          "type": "Sprite",
+          "updateIfNotVisible": false,
           "variables": [],
           "behaviors": [
             {
@@ -664,23 +708,43 @@
               "shake_speed": 10
             }
           ],
-          "string": "THAT",
-          "font": "east-octopus/East Octopus - Personal Use.otf",
-          "characterSize": 100,
-          "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
-          }
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "that.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
-          "bold": false,
-          "italic": false,
           "name": "transaction",
-          "smoothed": true,
           "tags": "",
-          "type": "TextObject::Text",
-          "underlined": false,
+          "type": "Sprite",
+          "updateIfNotVisible": false,
           "variables": [],
           "behaviors": [
             {
@@ -689,14 +753,37 @@
               "shake_speed": 10
             }
           ],
-          "string": "TRANSACTION",
-          "font": "east-octopus/East Octopus - Personal Use.otf",
-          "characterSize": 80,
-          "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
-          }
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "transaction.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [],
@@ -3837,10 +3924,10 @@
       "eventsFunctions": [],
       "eventsBasedBehaviors": [
         {
-          "description": "",
-          "fullName": "",
+          "description": "For splash screen sprites that should wobble",
+          "fullName": "Wobbler",
           "name": "wobbler",
-          "objectType": "",
+          "objectType": "Sprite",
           "eventsFunctions": [
             {
               "description": "",
@@ -3862,21 +3949,9 @@
                       },
                       "parameters": [
                         "Object",
-                        "1 * sin(TimeFromStart() * Object.Behavior::Propertyshake_speed())",
+                        "2 * sin(TimeFromStart() * Object.Behavior::Propertyshake_speed())",
                         "0",
                         ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "MettreX"
-                      },
-                      "parameters": [
-                        "Object",
-                        "=",
-                        "Object.X() + 1 * sin(TimeFromStart() * Object.Behavior::Propertyshake_speed())"
                       ],
                       "subInstructions": []
                     }
@@ -3892,7 +3967,7 @@
                   "longDescription": "",
                   "name": "Object",
                   "optional": false,
-                  "supplementaryInformation": "",
+                  "supplementaryInformation": "Sprite",
                   "type": "object"
                 },
                 {
@@ -3924,13 +3999,13 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "game::transaction::SetPropertyshake_speed"
+                        "value": "splash::wobbler::SetPropertyshake_speed"
                       },
                       "parameters": [
                         "Object",
                         "Behavior",
                         "=",
-                        "RandomFloatInRange(0.1, 0.9)"
+                        "RandomFloatInRange(2, 4)"
                       ],
                       "subInstructions": []
                     }
@@ -3946,7 +4021,7 @@
                   "longDescription": "",
                   "name": "Object",
                   "optional": false,
-                  "supplementaryInformation": "",
+                  "supplementaryInformation": "Sprite",
                   "type": "object"
                 },
                 {
