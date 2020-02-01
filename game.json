@@ -190,8 +190,8 @@
           "locked": false,
           "name": "pivot_point",
           "width": 0,
-          "x": 383,
-          "y": -32,
+          "x": 387,
+          "y": -33,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -228,7 +228,7 @@
               "name": "transaction",
               "type": "game::transaction",
               "distance_from_pivot": 300,
-              "starting_location": 140
+              "starting_location": 160
             }
           ],
           "animations": [
@@ -238,7 +238,7 @@
               "directions": [
                 {
                   "looping": false,
-                  "timeBetweenFrames": 0.08,
+                  "timeBetweenFrames": 20,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
@@ -573,7 +573,7 @@
                       "colorR": 74,
                       "creationTime": 0,
                       "disabled": false,
-                      "folded": false,
+                      "folded": true,
                       "name": "Rotate the transaction around the pivot",
                       "source": "",
                       "type": "BuiltinCommonInstructions::Group",
@@ -634,19 +634,6 @@
                         {
                           "type": {
                             "inverted": false,
-                            "value": "AddForceAL"
-                          },
-                          "parameters": [
-                            "Object",
-                            "-30",
-                            "450",
-                            "1"
-                          ],
-                          "subInstructions": []
-                        },
-                        {
-                          "type": {
-                            "inverted": false,
                             "value": "ModVarObjetTxt"
                           },
                           "parameters": [
@@ -654,6 +641,19 @@
                             "attached",
                             "=",
                             "\"false\""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "AddForceAL"
+                          },
+                          "parameters": [
+                            "Object",
+                            "-20",
+                            "450",
+                            "1"
                           ],
                           "subInstructions": []
                         }
@@ -674,7 +674,7 @@
                           "parameters": [
                             "Object",
                             "90",
-                            "20",
+                            "50",
                             "1"
                           ],
                           "subInstructions": []
