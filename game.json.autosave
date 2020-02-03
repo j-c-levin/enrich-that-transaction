@@ -766,6 +766,10 @@
         {
           "name": "enriched_transactions",
           "value": "0"
+        },
+        {
+          "name": "missed_transactions",
+          "value": "0"
         }
       ],
       "instances": [
@@ -2089,7 +2093,7 @@
         },
         {
           "name": "game_over",
-          "visibility": true,
+          "visibility": false,
           "cameras": [],
           "effects": []
         }
@@ -2276,7 +2280,7 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "game::pivot_point::should_transactions_speedup"
+                        "value": "game::pivot_point::should_speedup_transactions"
                       },
                       "parameters": [
                         "Object",
@@ -2328,18 +2332,18 @@
                 },
                 {
                   "disabled": false,
-                  "folded": false,
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
                       "type": {
                         "inverted": false,
-                        "value": "Egal"
+                        "value": "game::pivot_point::should_spawn_transaction"
                       },
                       "parameters": [
-                        "Object.Angle() - Object.Behavior::Propertylast_spawn_angle()",
-                        "<",
-                        "-360 / Variable(transactions_visible)"
+                        "Object",
+                        "Behavior",
+                        ""
                       ],
                       "subInstructions": []
                     }
@@ -2383,6 +2387,162 @@
                       "parameters": []
                     }
                   ]
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "game::pivot_point::should_slowdown_transactions"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "transactions_per_second",
+                        "=",
+                        "Variable(transactions_per_second) * 10"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "transactions_per_second",
+                        "-",
+                        "Object.Behavior::Propertytransaction_slowdown_amount()"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "transactions_per_second",
+                        "=",
+                        "max(Variable(transactions_per_second), 1)"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "transactions_per_second",
+                        "=",
+                        "Variable(transactions_per_second) / 10"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "game::pivot_point::SetPropertylast_speed_incremented_count"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "Variable(enriched_transactions)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [],
+                      "events": []
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::pivot_point",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Returns true if the pivot point has rotated enough",
+              "fullName": "Should a new transaction be spawned?",
+              "functionType": "Condition",
+              "name": "should_spawn_transaction",
+              "sentence": "_PARAM0_ should spawn a new transaction",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Egal"
+                      },
+                      "parameters": [
+                        "Object.Angle() - Object.Behavior::Propertylast_spawn_angle()",
+                        "<",
+                        "-360 / Variable(transactions_visible)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
                 }
               ],
               "parameters": [
@@ -2413,7 +2573,7 @@
               "description": "Returns true if the player has enriched enough transactions",
               "fullName": "Should the transactions speed up?",
               "functionType": "Condition",
-              "name": "should_transactions_speedup",
+              "name": "should_speedup_transactions",
               "sentence": "_PARAM0_ should speed up transactions",
               "events": [
                 {
@@ -2511,6 +2671,96 @@
                 }
               ],
               "objectGroups": []
+            },
+            {
+              "description": "Returns true if enough transactions have been missed in a row",
+              "fullName": "Should the transactions slow down?",
+              "functionType": "Condition",
+              "name": "should_slowdown_transactions",
+              "sentence": "_PARAM0_ should slowdown transactions",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "missed_transactions",
+                        ">=",
+                        "2"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "game::pivot_point::Propertylast_speed_reduced_count"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "!=",
+                        "Variable(missed_transactions)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "game::pivot_point::SetPropertylast_speed_reduced_count"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "Variable(missed_transactions)"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::pivot_point",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
             }
           ],
           "propertyDescriptors": [
@@ -2553,11 +2803,29 @@
             {
               "value": "2",
               "type": "Number",
-              "label": "How much faster should the transactions be?",
+              "label": "How much faster should the transactions be when the player enriches enough?",
               "description": "",
               "extraInformation": [],
-              "hidden": true,
+              "hidden": false,
               "name": "transaction_speedup_amount"
+            },
+            {
+              "value": "1",
+              "type": "Number",
+              "label": "How much slower should the transactions be when the player misses enough?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "transaction_slowdown_amount"
+            },
+            {
+              "value": "0",
+              "type": "Number",
+              "label": "How many enriched transactions were there when we reduced the speed?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "last_speed_reduced_count"
             }
           ]
         },
@@ -2675,7 +2943,7 @@
               "events": [
                 {
                   "disabled": false,
-                  "folded": false,
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -2754,7 +3022,7 @@
                 },
                 {
                   "disabled": false,
-                  "folded": true,
+                  "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -2840,6 +3108,18 @@
                             "Object.Behavior::Propertydata_quality_loss()"
                           ],
                           "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "missed_transactions",
+                            "+",
+                            "1"
+                          ],
+                          "subInstructions": []
                         }
                       ],
                       "events": []
@@ -2870,7 +3150,7 @@
                 },
                 {
                   "disabled": false,
-                  "folded": true,
+                  "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -2979,6 +3259,18 @@
                             "enriched_transactions",
                             "+",
                             "1"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "missed_transactions",
+                            "=",
+                            "0"
                           ],
                           "subInstructions": []
                         }
