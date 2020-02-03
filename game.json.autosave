@@ -827,13 +827,13 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 100,
+          "height": 150,
           "layer": "",
           "locked": false,
           "name": "button",
-          "width": 100,
-          "x": 76,
-          "y": 521,
+          "width": 150,
+          "x": 81,
+          "y": 519,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -847,13 +847,13 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 100,
+          "height": 150,
           "layer": "",
           "locked": false,
           "name": "button",
-          "width": 100,
-          "x": 232,
-          "y": 521,
+          "width": 150,
+          "x": 256,
+          "y": 518,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -867,13 +867,13 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 100,
+          "height": 150,
           "layer": "",
           "locked": false,
           "name": "button",
-          "width": 100,
-          "x": 583,
-          "y": 521,
+          "width": 150,
+          "x": 551,
+          "y": 517,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -887,13 +887,13 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 100,
+          "height": 150,
           "layer": "",
           "locked": false,
           "name": "button",
-          "width": 100,
-          "x": 736,
-          "y": 521,
+          "width": 150,
+          "x": 717,
+          "y": 516,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -997,13 +997,13 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 136,
+          "height": 160,
           "layer": "",
           "locked": false,
           "name": "button_hitbox",
-          "width": 136,
-          "x": 9,
-          "y": 454,
+          "width": 160,
+          "x": 0,
+          "y": 439,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -1011,66 +1011,6 @@
             {
               "name": "shape_id",
               "value": "0"
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 100,
-          "layer": "",
-          "locked": false,
-          "name": "button",
-          "width": 100,
-          "x": 232,
-          "y": 521,
-          "zOrder": 3,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "shape_id",
-              "value": "1"
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 100,
-          "layer": "",
-          "locked": false,
-          "name": "button",
-          "width": 100,
-          "x": 232,
-          "y": 521,
-          "zOrder": 3,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "shape_id",
-              "value": "1"
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 100,
-          "layer": "",
-          "locked": false,
-          "name": "button",
-          "width": 100,
-          "x": 232,
-          "y": 521,
-          "zOrder": 3,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "shape_id",
-              "value": "1"
             }
           ]
         },
@@ -1137,13 +1077,28 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 136,
+          "height": 873,
+          "layer": "",
+          "locked": true,
+          "name": "background",
+          "width": 1260,
+          "x": -241,
+          "y": -125,
+          "zOrder": -10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 160,
           "layer": "",
           "locked": false,
           "name": "button_hitbox",
-          "width": 136,
-          "x": 166,
-          "y": 454,
+          "width": 160,
+          "x": 175,
+          "y": 438,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -1157,33 +1112,13 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 136,
+          "height": 160,
           "layer": "",
           "locked": false,
           "name": "button_hitbox",
-          "width": 136,
-          "x": 511,
-          "y": 451,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "shape_id",
-              "value": "2"
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 136,
-          "layer": "",
-          "locked": false,
-          "name": "button_hitbox",
-          "width": 136,
-          "x": 664,
-          "y": 451,
+          "width": 160,
+          "x": 636,
+          "y": 436,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -1197,17 +1132,22 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 873,
+          "height": 160,
           "layer": "",
-          "locked": true,
-          "name": "background",
-          "width": 1260,
-          "x": -241,
-          "y": -125,
-          "zOrder": -10,
+          "locked": false,
+          "name": "button_hitbox",
+          "width": 160,
+          "x": 471,
+          "y": 436,
+          "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
-          "initialVariables": []
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "2"
+            }
+          ]
         }
       ],
       "objects": [
@@ -1344,7 +1284,8 @@
               "name": "transaction",
               "type": "game::transaction",
               "distance_from_pivot": 300,
-              "starting_location": 170
+              "starting_location": 170,
+              "data_quality_regain": 1
             }
           ],
           "animations": [
@@ -1840,7 +1781,7 @@
               "directions": [
                 {
                   "looping": false,
-                  "timeBetweenFrames": 0.0001,
+                  "timeBetweenFrames": 0.00001,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
@@ -2022,9 +1963,10 @@
               "name": "background",
               "type": "game::background",
               "medium_quality": "250;190;0",
-              "medium_data_quality_level": 75,
+              "medium_data_quality_level": 40,
               "low_quality": "201;64;70",
-              "high_quality": "251;203;51"
+              "high_quality": "251;203;51",
+              "high_quality_level": 80
             }
           ],
           "animations": [
@@ -3800,7 +3742,7 @@
                       "parameters": [
                         "Object",
                         "=",
-                        "lerp(Object.ScaleX(), 1.4, 0.1)"
+                        "lerp(Object.ScaleX(), (150 / 64), 0.1)"
                       ],
                       "subInstructions": []
                     }
@@ -3921,7 +3863,7 @@
                   "disabled": false,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::JsCode",
-                  "inlineCode": "const scale = 1.5\nconst easing = \"linear\"\nconst duration = 50 \nconst destroyObjectWhenFinished = false\n\nconst obj = objects[0]\nconst tween = obj.getBehavior(\"Tween\")\ntween.addObjectScaleTween(\"scale-pulse\", scale, scale, easing, duration, destroyObjectWhenFinished)",
+                  "inlineCode": "const scale = 1.9\nconst easing = \"linear\"\nconst duration = 50 \nconst destroyObjectWhenFinished = false\n\nconst obj = objects[0]\nconst tween = obj.getBehavior(\"Tween\")\ntween.addObjectScaleTween(\"scale-pulse\", scale, scale, easing, duration, destroyObjectWhenFinished)",
                   "parameterObjects": "Object",
                   "useStrict": true
                 }
@@ -4815,7 +4757,7 @@
                   "disabled": false,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::JsCode",
-                  "inlineCode": "const scale = 1.5\nconst easing = \"linear\"\nconst duration = 1000\nconst destroyObjectWhenFinished = false\n\nconst obj = objects[0]\nconst tween = obj.getBehavior(\"Tween\")\nconst colour = obj.getBehavior(\"background\")._behaviorData[\"current_colour\"]\nconst current_tween = obj.getBehavior(\"background\")._behaviorData[\"tweening_colour\"]\n\nif (colour === current_tween) {\n    return\n}\n\nobj.getBehavior(\"background\")._behaviorData[\"tweening_colour\"] = colour\n\nconsole.log(\"tweening to:\" + colour)\ntween.addObjectColorTween(\"colour-pulse\", colour, easing, duration, destroyObjectWhenFinished)",
+                  "inlineCode": "const scale = 1.5\nconst easing = \"linear\"\nconst duration = 1000\nconst destroyObjectWhenFinished = false\n\nconst obj = objects[0]\nconst tween = obj.getBehavior(\"Tween\")\nconst colour = obj.getBehavior(\"background\")._behaviorData[\"current_colour\"]\nconst current_tween = obj.getBehavior(\"background\")._behaviorData[\"tweening_colour\"]\n\nif (colour === current_tween) {\n    return\n}\n\nobj.getBehavior(\"background\")._behaviorData[\"tweening_colour\"] = colour\n\ntween.addObjectColorTween(\"colour-pulse\", colour, easing, duration, destroyObjectWhenFinished)",
                   "parameterObjects": "Object",
                   "useStrict": true
                 }
