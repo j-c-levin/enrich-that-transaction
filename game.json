@@ -2022,9 +2022,10 @@
               "name": "background",
               "type": "game::background",
               "medium_quality": "250;190;0",
-              "medium_data_quality_level": 75,
+              "medium_data_quality_level": 40,
               "low_quality": "201;64;70",
-              "high_quality": "251;203;51"
+              "high_quality": "251;203;51",
+              "high_quality_level": 80
             }
           ],
           "animations": [
@@ -4815,7 +4816,7 @@
                   "disabled": false,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::JsCode",
-                  "inlineCode": "const obj = objects[0]\nconst tween = obj.getBehavior(\"Tween\")\n\nconst scale = 1.5\nconst easing = \"linear\"\nconst duration = 1000\nconst destroyObjectWhenFinished = false\n\nconst colour = obj.getBehavior(\"background\")._behaviorData[\"current_colour\"]\ntween.addObjectColorTween(\"colour-pulse\", colour, easing, duration, destroyObjectWhenFinished)",
+                  "inlineCode": "const scale = 1.5\nconst easing = \"linear\"\nconst duration = 1000\nconst destroyObjectWhenFinished = false\n\nconst obj = objects[0]\nconst tween = obj.getBehavior(\"Tween\")\nconst colour = obj.getBehavior(\"background\")._behaviorData[\"current_colour\"]\nconst current_tween = obj.getBehavior(\"background\")._behaviorData[\"tweening_colour\"]\n\nif (colour === current_tween) {\n    return\n}\n\nobj.getBehavior(\"background\")._behaviorData[\"tweening_colour\"] = colour\n\ntween.addObjectColorTween(\"colour-pulse\", colour, easing, duration, destroyObjectWhenFinished)",
                   "parameterObjects": "Object",
                   "useStrict": true
                 }
@@ -4899,6 +4900,15 @@
               "extraInformation": [],
               "hidden": true,
               "name": "current_colour"
+            },
+            {
+              "value": "",
+              "type": "String",
+              "label": "What colour are we tweening to now?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "tweening_colour"
             }
           ]
         }
