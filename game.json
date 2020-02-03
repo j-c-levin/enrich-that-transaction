@@ -1191,6 +1191,10 @@
           ],
           "behaviors": [
             {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            },
+            {
               "name": "button",
               "type": "game::button"
             }
@@ -2114,6 +2118,10 @@
         }
       ],
       "behaviorsSharedData": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        },
         {
           "name": "back",
           "type": "game::back"
@@ -3750,6 +3758,92 @@
                     }
                   ],
                   "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SourisBouton"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "Object",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "game::button::pressed_pulse"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::button",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Pulses the button when it is pressed",
+              "fullName": "Pulse the button",
+              "functionType": "Action",
+              "name": "pressed_pulse",
+              "sentence": "Pulse _PARAM0_",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": "const scale = 1.5\nconst easing = \"linear\"\nconst duration = 50 \nconst destroyObjectWhenFinished = false\n\nconst obj = objects[0]\nconst tween = obj.getBehavior(\"Tween\")\ntween.addObjectScaleTween(\"scale-pulse\", scale, scale, easing, duration, destroyObjectWhenFinished)",
+                  "parameterObjects": "Object",
+                  "useStrict": true
                 }
               ],
               "parameters": [
