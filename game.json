@@ -368,6 +368,15 @@
         "name": "default-1.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewObject-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1184,6 +1193,21 @@
               "value": "3"
             }
           ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 873,
+          "layer": "",
+          "locked": true,
+          "name": "background",
+          "width": 1260,
+          "x": -241,
+          "y": -125,
+          "zOrder": -10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -1982,6 +2006,58 @@
             "g": 0,
             "r": 0
           }
+        },
+        {
+          "name": "background",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            },
+            {
+              "name": "background",
+              "type": "game::background",
+              "medium_quality": "250;190;0",
+              "medium_data_quality_level": 75,
+              "low_quality": "201;64;70",
+              "high_quality": "251;203;51"
+            }
+          ],
+          "animations": [
+            {
+              "name": "NewObject",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "NewObject-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [
@@ -2134,6 +2210,10 @@
         {
           "name": "back",
           "type": "game::back"
+        },
+        {
+          "name": "background",
+          "type": "game::background"
         },
         {
           "name": "button",
@@ -2501,16 +2581,7 @@
                       "subInstructions": []
                     }
                   ],
-                  "events": [
-                    {
-                      "disabled": false,
-                      "folded": false,
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [],
-                      "actions": [],
-                      "events": []
-                    }
-                  ]
+                  "events": []
                 }
               ],
               "parameters": [
@@ -2975,7 +3046,7 @@
               "events": [
                 {
                   "disabled": false,
-                  "folded": true,
+                  "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3729,7 +3800,7 @@
                       "parameters": [
                         "Object",
                         "=",
-                        "lerp(Object.ScaleX(), 1, 0.1)"
+                        "lerp(Object.ScaleX(), 1.4, 0.1)"
                       ],
                       "subInstructions": []
                     }
@@ -4569,6 +4640,267 @@
             }
           ],
           "propertyDescriptors": []
+        },
+        {
+          "description": "The game scene background",
+          "fullName": "Background",
+          "name": "background",
+          "objectType": "Sprite",
+          "eventsFunctions": [
+            {
+              "description": "",
+              "fullName": "",
+              "functionType": "Action",
+              "name": "onCreated",
+              "sentence": "",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeColor"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Object.Behavior::Propertyhigh_quality()"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::background",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "",
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPostEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "data_quality_current",
+                        "<",
+                        "Object.Behavior::Propertymedium_data_quality_level()"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "game::background::SetPropertycurrent_colour"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "Object.Behavior::Propertylow_quality()"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "data_quality_current",
+                        ">=",
+                        "Object.Behavior::Propertymedium_data_quality_level()"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "game::background::SetPropertycurrent_colour"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "Object.Behavior::Propertymedium_quality()"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "data_quality_current",
+                        ">=",
+                        "Object.Behavior::Propertyhigh_quality_level()"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "game::background::SetPropertycurrent_colour"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "Object.Behavior::Propertyhigh_quality()"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": "const obj = objects[0]\nconst tween = obj.getBehavior(\"Tween\")\n\nconst scale = 1.5\nconst easing = \"linear\"\nconst duration = 1000\nconst destroyObjectWhenFinished = false\n\nconst colour = obj.getBehavior(\"background\")._behaviorData[\"current_colour\"]\ntween.addObjectColorTween(\"colour-pulse\", colour, easing, duration, destroyObjectWhenFinished)",
+                  "parameterObjects": "Object",
+                  "useStrict": true
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::background",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": [
+            {
+              "value": "250;190;0",
+              "type": "String",
+              "label": "The background colour at high quality",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "high_quality"
+            },
+            {
+              "value": "204;103;0",
+              "type": "String",
+              "label": "The background colour at medium quality",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "medium_quality"
+            },
+            {
+              "value": "204;58;47",
+              "type": "String",
+              "label": "The background colour at low quality",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "low_quality"
+            },
+            {
+              "value": "95",
+              "type": "Number",
+              "label": "Above this number is high data quality",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "high_quality_level"
+            },
+            {
+              "value": "85",
+              "type": "Number",
+              "label": "Above this number is medium data quality",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "medium_data_quality_level"
+            },
+            {
+              "value": "",
+              "type": "String",
+              "label": "What colour is the background now?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "current_colour"
+            }
+          ]
         }
       ]
     },
