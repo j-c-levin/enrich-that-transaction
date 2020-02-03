@@ -1052,8 +1052,8 @@
           "locked": false,
           "name": "circle",
           "width": 136,
-          "x": 46,
-          "y": 436,
+          "x": 48,
+          "y": 277,
           "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
@@ -1068,7 +1068,7 @@
           "name": "back",
           "width": 0,
           "x": 39,
-          "y": 465,
+          "y": 294,
           "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
@@ -2139,7 +2139,7 @@
         },
         {
           "name": "game_over",
-          "visibility": false,
+          "visibility": true,
           "cameras": [],
           "effects": []
         }
