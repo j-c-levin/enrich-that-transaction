@@ -1285,7 +1285,10 @@
               "type": "game::transaction",
               "distance_from_pivot": 300,
               "starting_location": 170,
-              "data_quality_regain": 1
+              "data_quality_regain": 1,
+              "shake_speed": 10,
+              "data_quality_loss_multiplier": 250,
+              "data_quality_loss": 10
             }
           ],
           "animations": [
@@ -1382,7 +1385,9 @@
               "name": "pivot_point",
               "type": "game::pivot_point",
               "transaction_speedup_level_increment": 2,
-              "transaction_speedup_increment_at": 2
+              "transaction_speedup_increment_at": 3,
+              "transaction_slowdown_amount": 1,
+              "transaction_speedup_amount": 3
             }
           ],
           "animations": [
@@ -1963,8 +1968,8 @@
               "name": "background",
               "type": "game::background",
               "medium_quality": "250;190;0",
-              "medium_data_quality_level": 40,
-              "low_quality": "201;64;70",
+              "medium_data_quality_level": 70,
+              "low_quality": "255;182;177",
               "high_quality": "251;203;51",
               "high_quality_level": 80
             }
@@ -2869,7 +2874,7 @@
               "label": "How many enriched transactions were there when we reduced the speed?",
               "description": "",
               "extraInformation": [],
-              "hidden": false,
+              "hidden": true,
               "name": "last_speed_reduced_count"
             }
           ]
@@ -2988,7 +2993,7 @@
               "events": [
                 {
                   "disabled": false,
-                  "folded": false,
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3150,7 +3155,7 @@
                           "parameters": [
                             "data_quality_current",
                             "-",
-                            "Object.Behavior::Propertydata_quality_loss()"
+                            "Object.Behavior::Propertydata_quality_loss() * max(\n(Variable(score) / Object.Behavior::Propertydata_quality_loss_multiplier())\n, 1)"
                           ],
                           "subInstructions": []
                         },
@@ -3195,7 +3200,7 @@
                 },
                 {
                   "disabled": false,
-                  "folded": false,
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3593,6 +3598,15 @@
               "extraInformation": [],
               "hidden": false,
               "name": "shake_speed"
+            },
+            {
+              "value": "10",
+              "type": "Number",
+              "label": "After every X points, increase the damage done by data loss",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "data_quality_loss_multiplier"
             }
           ]
         },
