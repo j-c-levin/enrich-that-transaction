@@ -781,7 +781,7 @@
       "variables": [
         {
           "name": "transactions_per_second",
-          "value": "5"
+          "value": "50"
         },
         {
           "name": "transactions_visible",
@@ -909,11 +909,11 @@
           "customSize": false,
           "height": 0,
           "layer": "",
-          "locked": true,
+          "locked": false,
           "name": "target_area",
           "width": 0,
-          "x": 351,
-          "y": 246,
+          "x": 403,
+          "y": 296,
           "zOrder": -1,
           "numberProperties": [],
           "stringProperties": [],
@@ -1288,7 +1288,7 @@
               "data_quality_regain": 1,
               "shake_speed": 10,
               "data_quality_loss_multiplier": 250,
-              "data_quality_loss": 10
+              "data_quality_loss": 8
             }
           ],
           "animations": [
@@ -1428,7 +1428,16 @@
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            },
+            {
+              "name": "target_area",
+              "type": "game::target_area"
+            }
+          ],
           "animations": [
             {
               "name": "default",
@@ -1444,8 +1453,8 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 50,
+                        "y": 50
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -1968,7 +1977,7 @@
               "name": "background",
               "type": "game::background",
               "medium_quality": "250;190;0",
-              "medium_data_quality_level": 70,
+              "medium_data_quality_level": 40,
               "low_quality": "255;182;177",
               "high_quality": "251;203;51",
               "high_quality_level": 80
@@ -2144,7 +2153,7 @@
         },
         {
           "name": "game_over",
-          "visibility": true,
+          "visibility": false,
           "cameras": [],
           "effects": []
         }
@@ -2189,6 +2198,10 @@
         {
           "name": "score",
           "type": "game::score"
+        },
+        {
+          "name": "target_area",
+          "type": "game::target_area"
         },
         {
           "name": "transaction",
@@ -3745,6 +3758,18 @@
                         "1 + (0.1 * Object.Variable(shape_id))"
                       ],
                       "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "data_quality_current",
+                        "<=",
+                        "0"
+                      ],
+                      "subInstructions": []
                     }
                   ],
                   "actions": [
@@ -3785,10 +3810,12 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "Cache"
+                        "value": "ChangeScale"
                       },
                       "parameters": [
-                        "Object"
+                        "Object",
+                        "=",
+                        "lerp(Object.ScaleX(), 0, 0.1)"
                       ],
                       "subInstructions": []
                     }
@@ -3877,7 +3904,7 @@
                   "disabled": false,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::JsCode",
-                  "inlineCode": "const scale = 1.9\nconst easing = \"linear\"\nconst duration = 50 \nconst destroyObjectWhenFinished = false\n\nconst obj = objects[0]\nconst tween = obj.getBehavior(\"Tween\")\ntween.addObjectScaleTween(\"scale-pulse\", scale, scale, easing, duration, destroyObjectWhenFinished)",
+                  "inlineCode": "const scale = 1.9\nconst easing = \"linear\"\nconst duration = 50 \nconst destroyObjectWhenFinished = false\n\nconst obj = objects[0]\nconst tween = obj.getBehavior(\"Tween\")\ntween.addObjectScaleTween(\"scale-pulse\", scale, scale, easing, duration, destroyObjectWhenFinished)\n\nconst targetScale = 0.8\nconst targetArea = runtimeScene.getObjects(\"target_area\")[0]\nconst targetTween = targetArea.getBehavior(\"Tween\")\ntargetTween.addObjectScaleTween(\"scale-pulse\", targetScale, targetScale, easing, duration, destroyObjectWhenFinished)",
                   "parameterObjects": "Object",
                   "useStrict": true
                 }
@@ -4346,6 +4373,18 @@
                         "",
                         "",
                         ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "data_quality_current",
+                        ">",
+                        "0"
                       ],
                       "subInstructions": []
                     }
@@ -4866,6 +4905,215 @@
               "name": "tweening_colour"
             }
           ]
+        },
+        {
+          "description": "The target area in the game scene",
+          "fullName": "Target Area",
+          "name": "target_area",
+          "objectType": "Sprite",
+          "eventsFunctions": [
+            {
+              "description": "",
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPostEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "DepartScene"
+                      },
+                      "parameters": [
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "Object",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeSprite"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "Object.Variable(shape_id)"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeScale"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ObjectTimer"
+                      },
+                      "parameters": [
+                        "Object",
+                        "\"ready\"",
+                        "1.5"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "data_quality_current",
+                        "<=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeScale"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "lerp(Object.ScaleX(), 1, 0.1)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "data_quality_current",
+                        "<=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeScale"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "lerp(Object.ScaleX(), 0, 0.1)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ScaleWidth"
+                          },
+                          "parameters": [
+                            "Object",
+                            "<",
+                            "0.1"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Cache"
+                          },
+                          "parameters": [
+                            "Object"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::target_area",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": []
         }
       ]
     },
