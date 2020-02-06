@@ -377,6 +377,33 @@
         "name": "NewObject-1.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewFile-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewFile-1-0.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "default-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "default-1-0.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "default-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "default-1-1.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -775,13 +802,13 @@
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.816
+        "zoomFactor": 0.753
       },
       "objectsGroups": [],
       "variables": [
         {
           "name": "transactions_per_second",
-          "value": "50"
+          "value": "5"
         },
         {
           "name": "transactions_visible",
@@ -814,7 +841,7 @@
           "customSize": false,
           "height": 0,
           "layer": "",
-          "locked": true,
+          "locked": false,
           "name": "pivot_point",
           "width": 0,
           "x": 376,
@@ -886,34 +913,14 @@
         },
         {
           "angle": 0,
-          "customSize": true,
-          "height": 150,
-          "layer": "",
-          "locked": false,
-          "name": "button",
-          "width": 150,
-          "x": 717,
-          "y": 516,
-          "zOrder": 3,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "shape_id",
-              "value": "3"
-            }
-          ]
-        },
-        {
-          "angle": 0,
           "customSize": false,
-          "height": 0,
+          "height": 133,
           "layer": "",
           "locked": false,
           "name": "target_area",
-          "width": 0,
-          "x": 403,
-          "y": 296,
+          "width": 133,
+          "x": 401,
+          "y": 297,
           "zOrder": -1,
           "numberProperties": [],
           "stringProperties": [],
@@ -924,27 +931,12 @@
           "customSize": true,
           "height": 186,
           "layer": "",
-          "locked": true,
+          "locked": false,
           "name": "data_quality_green",
           "width": 50,
-          "x": 402,
-          "y": 227,
+          "x": 403,
+          "y": 232,
           "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 186,
-          "layer": "",
-          "locked": true,
-          "name": "data_quality_red",
-          "width": 50,
-          "x": 377,
-          "y": 41,
-          "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -969,7 +961,7 @@
           "customSize": false,
           "height": 0,
           "layer": "",
-          "locked": true,
+          "locked": false,
           "name": "transactions_per_second",
           "width": 0,
           "x": 463,
@@ -984,7 +976,7 @@
           "customSize": false,
           "height": 0,
           "layer": "",
-          "locked": true,
+          "locked": false,
           "name": "score",
           "width": 0,
           "x": 154,
@@ -1002,8 +994,8 @@
           "locked": false,
           "name": "button_hitbox",
           "width": 160,
-          "x": 0,
-          "y": 439,
+          "x": 2,
+          "y": 440,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -1077,28 +1069,13 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 873,
-          "layer": "",
-          "locked": true,
-          "name": "background",
-          "width": 1260,
-          "x": -241,
-          "y": -125,
-          "zOrder": -10,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
           "height": 160,
           "layer": "",
           "locked": false,
           "name": "button_hitbox",
           "width": 160,
           "x": 175,
-          "y": 438,
+          "y": 439,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -1117,9 +1094,29 @@
           "locked": false,
           "name": "button_hitbox",
           "width": 160,
-          "x": 636,
-          "y": 436,
+          "x": 469,
+          "y": 437,
           "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "shape_id",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 150,
+          "layer": "",
+          "locked": false,
+          "name": "button",
+          "width": 150,
+          "x": 717,
+          "y": 516,
+          "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": [
@@ -1132,20 +1129,35 @@
         {
           "angle": 0,
           "customSize": true,
+          "height": 186,
+          "layer": "",
+          "locked": false,
+          "name": "data_quality_red",
+          "width": 50,
+          "x": 403,
+          "y": 139,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
           "height": 160,
           "layer": "",
           "locked": false,
           "name": "button_hitbox",
           "width": 160,
-          "x": 471,
-          "y": 436,
+          "x": 636,
+          "y": 437,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": [
             {
               "name": "shape_id",
-              "value": "2"
+              "value": "3"
             }
           ]
         }
@@ -1449,7 +1461,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "default-1.png",
+                      "image": "default-1-1.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1541,8 +1553,8 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 25,
+                        "y": 16
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -2014,6 +2026,63 @@
               ]
             }
           ]
+        },
+        {
+          "additive": false,
+          "alphaParam": "Mutable",
+          "angleParam": "Mutable",
+          "blueParam": "Random",
+          "destroyWhenNoParticles": true,
+          "emissionEditionSimpleMode": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 300,
+          "emitterForceMin": 250,
+          "emitterXDirection": 0,
+          "emitterYDirection": 1,
+          "emitterZDirection": 0,
+          "flow": 500,
+          "friction": 100,
+          "gravityEditionSimpleMode": true,
+          "greenParam": "Random",
+          "maxParticleNb": 300,
+          "name": "super_enriched_star_burst",
+          "particleAlpha1": 255,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 255,
+          "particleBlue2": 255,
+          "particleEditionSimpleMode": true,
+          "particleGravityX": 0,
+          "particleGravityY": 100,
+          "particleGravityZ": 0,
+          "particleGreen1": 255,
+          "particleGreen2": 255,
+          "particleLifeTimeMax": 0.6,
+          "particleLifeTimeMin": 0.3,
+          "particleRed1": 255,
+          "particleRed2": 255,
+          "particleSize1": 150,
+          "particleSize2": 100,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "redParam": "Enabled",
+          "rendererParam1": 3,
+          "rendererParam2": 1,
+          "rendererType": "Quad",
+          "sizeParam": "Mutable",
+          "tags": "",
+          "tank": 10,
+          "textureParticleName": "NewFile-1-0.png",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 10,
+          "variables": [],
+          "behaviors": []
         }
       ],
       "events": [
@@ -3085,7 +3154,7 @@
                 },
                 {
                   "disabled": false,
-                  "folded": false,
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3213,7 +3282,7 @@
                 },
                 {
                   "disabled": false,
-                  "folded": true,
+                  "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3250,95 +3319,99 @@
                           "subInstructions": []
                         }
                       ],
-                      "actions": [
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "ModVarObjetTxt"
-                          },
-                          "parameters": [
-                            "Object",
-                            "attached",
-                            "=",
-                            "\"false\""
-                          ],
-                          "subInstructions": []
-                        },
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "AddForceAL"
-                          },
-                          "parameters": [
-                            "Object",
-                            "RandomFloatInRange(-10, 10)",
-                            "800",
-                            "1"
-                          ],
-                          "subInstructions": []
-                        },
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "ModVarScene"
-                          },
-                          "parameters": [
-                            "data_quality_current",
-                            "+",
-                            "Object.Behavior::Propertydata_quality_regain()"
-                          ],
-                          "subInstructions": []
-                        },
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "ModVarScene"
-                          },
-                          "parameters": [
-                            "data_quality_current",
-                            "=",
-                            "min(Variable(data_quality_current), Variable(data_quality_max))"
-                          ],
-                          "subInstructions": []
-                        },
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "ModVarScene"
-                          },
-                          "parameters": [
-                            "score",
-                            "+",
-                            "ceil(Object.Behavior::Propertyscore_increment() * Variable(transactions_per_second))"
-                          ],
-                          "subInstructions": []
-                        },
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "ModVarScene"
-                          },
-                          "parameters": [
-                            "enriched_transactions",
-                            "+",
-                            "1"
-                          ],
-                          "subInstructions": []
-                        },
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "ModVarScene"
-                          },
-                          "parameters": [
-                            "missed_transactions",
-                            "=",
-                            "0"
-                          ],
-                          "subInstructions": []
-                        }
-                      ],
+                      "actions": [],
                       "events": [
+                        {
+                          "disabled": false,
+                          "folded": true,
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "game::transaction::should_super_enrich"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                ""
+                              ],
+                              "subInstructions": []
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "ModVarScene"
+                              },
+                              "parameters": [
+                                "score",
+                                "+",
+                                "ceil(Object.Behavior::Propertyscore_increment() * Variable(transactions_per_second)) * 2"
+                              ],
+                              "subInstructions": []
+                            }
+                          ],
+                          "events": [
+                            {
+                              "colorB": 228,
+                              "colorG": 176,
+                              "colorR": 74,
+                              "creationTime": 0,
+                              "disabled": false,
+                              "folded": true,
+                              "name": "Create super enriched sparkle",
+                              "source": "",
+                              "type": "BuiltinCommonInstructions::Group",
+                              "events": [
+                                {
+                                  "disabled": false,
+                                  "folded": false,
+                                  "type": "BuiltinCommonInstructions::JsCode",
+                                  "inlineCode": "const superStar = runtimeScene.createObject(\"super_enriched_star_burst\")\nsuperStar.setX(403)\nsuperStar.setY(296)",
+                                  "parameterObjects": "",
+                                  "useStrict": true
+                                }
+                              ],
+                              "parameters": []
+                            }
+                          ]
+                        },
+                        {
+                          "disabled": false,
+                          "folded": false,
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "game::transaction::should_super_enrich"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                ""
+                              ],
+                              "subInstructions": []
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "ModVarScene"
+                              },
+                              "parameters": [
+                                "score",
+                                "+",
+                                "ceil(Object.Behavior::Propertyscore_increment() * Variable(transactions_per_second))"
+                              ],
+                              "subInstructions": []
+                            }
+                          ],
+                          "events": []
+                        },
                         {
                           "colorB": 228,
                           "colorG": 176,
@@ -3360,6 +3433,104 @@
                             }
                           ],
                           "parameters": []
+                        },
+                        {
+                          "disabled": false,
+                          "folded": false,
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Send the transaction shooting off, regain some data quality",
+                          "comment2": ""
+                        },
+                        {
+                          "disabled": false,
+                          "folded": false,
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "ModVarObjetTxt"
+                              },
+                              "parameters": [
+                                "Object",
+                                "attached",
+                                "=",
+                                "\"false\""
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "AddForceAL"
+                              },
+                              "parameters": [
+                                "Object",
+                                "RandomFloatInRange(-10, 10)",
+                                "800",
+                                "1"
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "ModVarScene"
+                              },
+                              "parameters": [
+                                "data_quality_current",
+                                "+",
+                                "Object.Behavior::Propertydata_quality_regain()"
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "ModVarScene"
+                              },
+                              "parameters": [
+                                "data_quality_current",
+                                "=",
+                                "min(Variable(data_quality_current), Variable(data_quality_max))"
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "ModVarScene"
+                              },
+                              "parameters": [
+                                "enriched_transactions",
+                                "+",
+                                "1"
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "ModVarScene"
+                              },
+                              "parameters": [
+                                "missed_transactions",
+                                "=",
+                                "0"
+                              ],
+                              "subInstructions": []
+                            }
+                          ],
+                          "events": []
                         }
                       ]
                     }
@@ -3537,6 +3708,93 @@
                 }
               ],
               "objectGroups": []
+            },
+            {
+              "description": "Returns true if the transaction is in the center of the target area",
+              "fullName": "Should the transaction super-enrich?",
+              "functionType": "Condition",
+              "name": "should_super_enrich",
+              "sentence": "_PARAM0_ should super enrich",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "BuiltinCommonInstructions::And"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "Object",
+                            "current_rotation",
+                            "<",
+                            "Object.Behavior::Propertysuper_min_rotation()"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "Object",
+                            "current_rotation",
+                            ">",
+                            "Object.Behavior::Propertysuper_max_rotation()"
+                          ],
+                          "subInstructions": []
+                        }
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::transaction",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
             }
           ],
           "propertyDescriptors": [
@@ -3620,6 +3878,24 @@
               "extraInformation": [],
               "hidden": false,
               "name": "data_quality_loss_multiplier"
+            },
+            {
+              "value": "-266",
+              "type": "Number",
+              "label": "Minimum rotation for the super enrichment",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "super_min_rotation"
+            },
+            {
+              "value": "-274",
+              "type": "Number",
+              "label": "Maximum rotation for the super enrichment",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "super_max_rotation"
             }
           ]
         },
@@ -3990,6 +4266,18 @@
                         "Variable(data_quality_max)"
                       ],
                       "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeHeight"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "0"
+                      ],
+                      "subInstructions": []
                     }
                   ],
                   "events": []
@@ -3997,10 +4285,46 @@
                 {
                   "disabled": false,
                   "folded": false,
-                  "type": "BuiltinCommonInstructions::JsCode",
-                  "inlineCode": "const health = runtimeScene.getVariables().get(\"data_quality_current\").getAsNumber()\nconst maxHealth = runtimeScene.getVariables().get(\"data_quality_max\").getAsNumber()\n\nlet healthPercentage = health / maxHealth\nhealthPercentage = Math.min(Math.max(healthPercentage, 0), 1)\n\nconst healthBar = objects[0]\nconst originalHeight = healthBar.getVariables().get(\"original_height\").getAsNumber()\nconst height = originalHeight * healthPercentage\n\nconst t = 0.9\n\nconst interoplatedValue = healthBar.getHeight() * t + height * (1-t)\nhealthBar.setHeight(interoplatedValue)",
-                  "parameterObjects": "Object",
-                  "useStrict": true
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ObjectTimer"
+                      },
+                      "parameters": [
+                        "Object",
+                        "\"begin\"",
+                        "1.7"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "disabled": false,
+                      "folded": false,
+                      "name": "Scale the bar according to data quality",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "disabled": false,
+                          "folded": false,
+                          "type": "BuiltinCommonInstructions::JsCode",
+                          "inlineCode": "const health = runtimeScene.getVariables().get(\"data_quality_current\").getAsNumber()\nconst maxHealth = runtimeScene.getVariables().get(\"data_quality_max\").getAsNumber()\n\nlet healthPercentage = health / maxHealth\nhealthPercentage = Math.min(Math.max(healthPercentage, 0), 1)\n\nconst healthBar = objects[0]\nconst originalHeight = healthBar.getVariables().get(\"original_height\").getAsNumber()\nconst height = originalHeight * healthPercentage\n\nconst t = 0.95\n\nconst interoplatedValue = healthBar.getHeight() * t + height * (1-t)\nhealthBar.setHeight(interoplatedValue)",
+                          "parameterObjects": "Object",
+                          "useStrict": true
+                        }
+                      ],
+                      "parameters": []
+                    }
+                  ]
                 }
               ],
               "parameters": [
@@ -4397,7 +4721,7 @@
                       "colorR": 74,
                       "creationTime": 0,
                       "disabled": false,
-                      "folded": true,
+                      "folded": false,
                       "name": "Check if the transaction over the target area is the same shape as the button",
                       "source": "",
                       "type": "BuiltinCommonInstructions::Group",
@@ -4406,7 +4730,7 @@
                           "disabled": false,
                           "folded": false,
                           "type": "BuiltinCommonInstructions::JsCode",
-                          "inlineCode": "// find attached transactions over the target area\nconst transactions = runtimeScene.getObjects(\"transaction\")\nconst targets = transactions.filter(transaction => {\n    const rotation = transaction.getVariables().get(\"current_rotation\").getAsNumber()\n    const rotated_far_enough = rotation < -255\n\n    const attached = transaction.getVariables().get(\"attached\").getAsString() == \"true\"\n    \n    return rotated_far_enough && attached\n})\n\nif (targets.length === 0) {\n    return\n}\n\n// get the shape\nconst target = targets[0]\nconst target_frame = target.getAnimationFrame()\nconst button_frame = objects[0].getVariables().get(\"shape_id\").getAsNumber()\n\n// enrich the transaction if the right button was pressed\nif (target_frame === button_frame) {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_correctly\"] = true\n}",
+                          "inlineCode": "// find attached transactions over the target area\nconst transactions = runtimeScene.getObjects(\"transaction\")\nconst targets = transactions.filter(transaction => {\n    const rotation = transaction.getVariables().get(\"current_rotation\").getAsNumber()\n    const rotated_far_enough = rotation < -260\n\n    const attached = transaction.getVariables().get(\"attached\").getAsString() == \"true\"\n    \n    return rotated_far_enough && attached\n})\n\nif (targets.length === 0) {\n    return\n}\n\n// get the shape\nconst target = targets[0]\nconst target_frame = target.getAnimationFrame()\nconst button_frame = objects[0].getVariables().get(\"shape_id\").getAsNumber()\n\n// enrich the transaction if the right button was pressed\nif (target_frame === button_frame) {\n    target.getBehavior(\"transaction\")._behaviorData[\"enriched_correctly\"] = true\n}",
                           "parameterObjects": "Object",
                           "useStrict": true
                         }
