@@ -3162,7 +3162,7 @@
                 },
                 {
                   "disabled": false,
-                  "folded": true,
+                  "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3188,13 +3188,12 @@
                         {
                           "type": {
                             "inverted": false,
-                            "value": "VarObjetTxt"
+                            "value": "game::transaction::is_rotating_around"
                           },
                           "parameters": [
                             "Object",
-                            "attached",
-                            "=",
-                            "\"true\""
+                            "Behavior",
+                            ""
                           ],
                           "subInstructions": []
                         }
@@ -3290,7 +3289,7 @@
                 },
                 {
                   "disabled": false,
-                  "folded": true,
+                  "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3316,13 +3315,12 @@
                         {
                           "type": {
                             "inverted": false,
-                            "value": "VarObjetTxt"
+                            "value": "game::transaction::is_rotating_around"
                           },
                           "parameters": [
                             "Object",
-                            "attached",
-                            "=",
-                            "\"true\""
+                            "Behavior",
+                            ""
                           ],
                           "subInstructions": []
                         }
