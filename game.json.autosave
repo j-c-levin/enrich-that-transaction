@@ -4097,24 +4097,12 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "ObjectTimer"
+                        "value": "game::button::should_be_large"
                       },
                       "parameters": [
                         "Object",
-                        "\"ready\"",
-                        "1 + (0.1 * Object.Variable(shape_id))"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": true,
-                        "value": "VarScene"
-                      },
-                      "parameters": [
-                        "data_quality_current",
-                        "<=",
-                        "0"
+                        "Behavior",
+                        ""
                       ],
                       "subInstructions": []
                     }
@@ -4211,16 +4199,6 @@
                         ""
                       ],
                       "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "DeviceVibration::StartVibration"
-                      },
-                      "parameters": [
-                        "50"
-                      ],
-                      "subInstructions": []
                     }
                   ],
                   "events": []
@@ -4264,6 +4242,82 @@
                   "inlineCode": "const scale = 1.9\nconst easing = \"linear\"\nconst duration = 50 \nconst destroyObjectWhenFinished = false\n\nconst obj = objects[0]\nconst tween = obj.getBehavior(\"Tween\")\ntween.addObjectScaleTween(\"scale-pulse\", scale, scale, easing, duration, destroyObjectWhenFinished)\n\nconst targetScale = 0.8\nconst targetArea = runtimeScene.getObjects(\"target_area\")[0]\nconst targetTween = targetArea.getBehavior(\"Tween\")\ntargetTween.addObjectScaleTween(\"scale-pulse\", targetScale, targetScale, easing, duration, destroyObjectWhenFinished)",
                   "parameterObjects": "Object",
                   "useStrict": true
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::button",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Returns true if the button should be large",
+              "fullName": "Should the button be large",
+              "functionType": "Condition",
+              "name": "should_be_large",
+              "sentence": "_PARAM0_ should be large",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ObjectTimer"
+                      },
+                      "parameters": [
+                        "Object",
+                        "\"ready\"",
+                        "1 + (0.1 * Object.Variable(shape_id))"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "data_quality_current",
+                        "<=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
                 }
               ],
               "parameters": [
