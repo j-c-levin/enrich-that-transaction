@@ -3289,7 +3289,7 @@
                 },
                 {
                   "disabled": false,
-                  "folded": true,
+                  "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3357,6 +3357,18 @@
                                 "ceil(Object.Behavior::Propertyscore_increment() * Variable(transactions_per_second)) * 2"
                               ],
                               "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "ModVarScene"
+                              },
+                              "parameters": [
+                                "data_quality_current",
+                                "+",
+                                "Object.Behavior::Propertydata_quality_super_regen()"
+                              ],
+                              "subInstructions": []
                             }
                           ],
                           "events": [
@@ -3412,6 +3424,18 @@
                                 "score",
                                 "+",
                                 "ceil(Object.Behavior::Propertyscore_increment() * Variable(transactions_per_second))"
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "ModVarScene"
+                              },
+                              "parameters": [
+                                "data_quality_current",
+                                "+",
+                                "Object.Behavior::Propertydata_quality_regain()"
                               ],
                               "subInstructions": []
                             }
@@ -3484,18 +3508,6 @@
                                 "RandomFloatInRange(-10, 10)",
                                 "800",
                                 "1"
-                              ],
-                              "subInstructions": []
-                            },
-                            {
-                              "type": {
-                                "inverted": false,
-                                "value": "ModVarScene"
-                              },
-                              "parameters": [
-                                "data_quality_current",
-                                "+",
-                                "Object.Behavior::Propertydata_quality_regain()"
                               ],
                               "subInstructions": []
                             },
@@ -3967,6 +3979,15 @@
               "extraInformation": [],
               "hidden": false,
               "name": "super_max_rotation"
+            },
+            {
+              "value": "2",
+              "type": "Number",
+              "label": "How much data quality should be regained from a successful super enrichment?",
+              "description": "",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "data_quality_super_regen"
             }
           ]
         },
