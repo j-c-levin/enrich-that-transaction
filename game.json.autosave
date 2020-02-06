@@ -3084,7 +3084,7 @@
               "events": [
                 {
                   "disabled": false,
-                  "folded": false,
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3162,7 +3162,7 @@
                 },
                 {
                   "disabled": false,
-                  "folded": false,
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3289,7 +3289,7 @@
                 },
                 {
                   "disabled": false,
-                  "folded": false,
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -4211,6 +4211,16 @@
                         ""
                       ],
                       "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "DeviceVibration::StartVibration"
+                      },
+                      "parameters": [
+                        "50"
+                      ],
+                      "subInstructions": []
                     }
                   ],
                   "events": []
@@ -4896,7 +4906,7 @@
                       "colorR": 74,
                       "creationTime": 0,
                       "disabled": false,
-                      "folded": false,
+                      "folded": true,
                       "name": "Check if the transaction over the target area is the same shape as the button",
                       "source": "",
                       "type": "BuiltinCommonInstructions::Group",
