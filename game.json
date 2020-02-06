@@ -802,7 +802,7 @@
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.753
+        "zoomFactor": 0.9406
       },
       "objectsGroups": [],
       "variables": [
@@ -1300,7 +1300,7 @@
               "data_quality_regain": 1,
               "shake_speed": 10,
               "data_quality_loss_multiplier": 250,
-              "data_quality_loss": 8
+              "data_quality_loss": 10
             }
           ],
           "animations": [
@@ -1537,7 +1537,12 @@
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "data_quality_red",
+              "type": "game::data_quality_red"
+            }
+          ],
           "animations": [
             {
               "name": "default",
@@ -2251,6 +2256,10 @@
         {
           "name": "data_quality_green",
           "type": "game::data_quality_green"
+        },
+        {
+          "name": "data_quality_red",
+          "type": "game::data_quality_red"
         },
         {
           "name": "enriched_trail",
@@ -3075,19 +3084,18 @@
               "events": [
                 {
                   "disabled": false,
-                  "folded": true,
+                  "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
                       "type": {
                         "inverted": false,
-                        "value": "VarObjetTxt"
+                        "value": "game::transaction::is_rotating_around"
                       },
                       "parameters": [
                         "Object",
-                        "attached",
-                        "=",
-                        "\"true\""
+                        "Behavior",
+                        ""
                       ],
                       "subInstructions": []
                     }
@@ -3237,7 +3245,7 @@
                           "parameters": [
                             "data_quality_current",
                             "-",
-                            "Object.Behavior::Propertydata_quality_loss() * max(\n(Variable(score) / Object.Behavior::Propertydata_quality_loss_multiplier())\n, 1)"
+                            "Object.Behavior::Propertydata_quality_loss() * \n(1 + (Variable(score) / Object.Behavior::Propertydata_quality_loss_multiplier()))"
                           ],
                           "subInstructions": []
                         },
@@ -3282,7 +3290,7 @@
                 },
                 {
                   "disabled": false,
-                  "folded": false,
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3755,6 +3763,71 @@
                           "subInstructions": []
                         }
                       ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::transaction",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Returns true if the transaction is still rotating round the pivot point",
+              "fullName": "Is the transaction rotating around?",
+              "functionType": "Condition",
+              "name": "is_rotating_around",
+              "sentence": "_PARAM0_ is rotating around the pivot point",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarObjetTxt"
+                      },
+                      "parameters": [
+                        "Object",
+                        "attached",
+                        "=",
+                        "\"true\""
+                      ],
+                      "subInstructions": []
                     }
                   ],
                   "actions": [
@@ -4284,7 +4357,7 @@
                 },
                 {
                   "disabled": false,
-                  "folded": false,
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -4295,7 +4368,7 @@
                       "parameters": [
                         "Object",
                         "\"begin\"",
-                        "1.7"
+                        "1.8"
                       ],
                       "subInstructions": []
                     }
@@ -4317,7 +4390,7 @@
                           "disabled": false,
                           "folded": false,
                           "type": "BuiltinCommonInstructions::JsCode",
-                          "inlineCode": "const health = runtimeScene.getVariables().get(\"data_quality_current\").getAsNumber()\nconst maxHealth = runtimeScene.getVariables().get(\"data_quality_max\").getAsNumber()\n\nlet healthPercentage = health / maxHealth\nhealthPercentage = Math.min(Math.max(healthPercentage, 0), 1)\n\nconst healthBar = objects[0]\nconst originalHeight = healthBar.getVariables().get(\"original_height\").getAsNumber()\nconst height = originalHeight * healthPercentage\n\nconst t = 0.95\n\nconst interoplatedValue = healthBar.getHeight() * t + height * (1-t)\nhealthBar.setHeight(interoplatedValue)",
+                          "inlineCode": "const health = runtimeScene.getVariables().get(\"data_quality_current\").getAsNumber()\nconst maxHealth = runtimeScene.getVariables().get(\"data_quality_max\").getAsNumber()\n\nlet healthPercentage = health / maxHealth\nhealthPercentage = Math.min(Math.max(healthPercentage, 0), 1)\n\nconst healthBar = objects[0]\nconst originalHeight = healthBar.getVariables().get(\"original_height\").getAsNumber()\nconst height = originalHeight * healthPercentage\n\nconst t = 0.93\n\nconst interoplatedValue = healthBar.getHeight() * t + height * (1-t)\nhealthBar.setHeight(interoplatedValue)",
                           "parameterObjects": "Object",
                           "useStrict": true
                         }
@@ -4346,6 +4419,110 @@
                   "name": "Behavior",
                   "optional": false,
                   "supplementaryInformation": "game::data_quality_green",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": []
+        },
+        {
+          "description": "The red bar in the game scene",
+          "fullName": "Data Quality Red",
+          "name": "data_quality_red",
+          "objectType": "Sprite",
+          "eventsFunctions": [
+            {
+              "description": "",
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPostEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "DepartScene"
+                      },
+                      "parameters": [
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Object"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ObjectTimer"
+                      },
+                      "parameters": [
+                        "Object",
+                        "\"begin\"",
+                        "3.3"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "Object",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "game::data_quality_red",
                   "type": "behavior"
                 }
               ],
