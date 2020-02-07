@@ -1160,6 +1160,21 @@
               "value": "3"
             }
           ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 635,
+          "layer": "",
+          "locked": false,
+          "name": "background",
+          "width": 853,
+          "x": -26,
+          "y": -19,
+          "zOrder": -56,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
